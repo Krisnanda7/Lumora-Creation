@@ -53,7 +53,7 @@ export default function Team() {
           <div className="p-6 shadow-md rounded-lg bg-white w-56">
             <img
               src="/team.jpg"
-              alt="Designer"
+              alt="satya"
               className="w-32 h-32 mx-auto rounded-full object-cover"
             />
             <h3 className="mt-4 font-bold text-xl">
