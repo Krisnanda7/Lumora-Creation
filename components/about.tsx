@@ -83,7 +83,7 @@ export default function About() {
               <div className="bg-white rounded-xl p-4 text-center h-96 flex items-center justify-center overflow-hidden">
                 {/* Image Container */}
                 <img
-                  src="/icon.PNG" // Ganti dengan path gambar Anda
+                  src="/public/icon.png" // Ganti dengan path gambar Anda
                   alt="Lumora Eco-Friendly Candle"
                   className="w-full h-full object-cover rounded-lg"
                 />
