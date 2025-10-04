@@ -5,7 +5,7 @@ export const metadata = {
   title: "Lumora Creation",
   description: "Eco-Friendly Candle made from recycled cooking oil",
   icons: {
-    icon: "/icon.png",
+    icon: "/url.png",
   },
 };
 
