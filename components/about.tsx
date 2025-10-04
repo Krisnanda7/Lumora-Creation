@@ -36,7 +36,7 @@ export default function About() {
             <div className="space-y-8">
               {/* Header */}
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-serif">
                   Tentang{" "}
                   <span className="text-[#D4A017]">Lumora Creation</span>
                 </h2>

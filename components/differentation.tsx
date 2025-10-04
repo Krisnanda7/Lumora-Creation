@@ -2,12 +2,13 @@ export default function Differentiation() {
   return (
     <section id="differentation" className="py-20 px-6 md:px-20 bg-white">
       <div data-aos="fade-right" data-aos-duration="1000">
-        <h2 className="text-4xl md:text-5xl font-bold text-center  text-gray-800 mb-10">
-          Apa yang Membuat <span className="text-[#D4A017]">Lumora</span> Unik?
+        <h2 className="text-4xl md:text-5xl font-bold text-center  text-gray-800 mb-10 font-serif">
+          Apa yang Membuat{" "}
+          <span className="text-[#D4A017]">Lumora Creation</span> Unik?
         </h2>
         <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
         <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-left">
+          <table className="w-full border border-gray-300 text-left lg:text-lg text-sm">
             <thead>
               <tr className="bg-[#D4A017] text-white text-center">
                 <th className="px-4 py-3 text-center text-gray-800">Aspek</th>
