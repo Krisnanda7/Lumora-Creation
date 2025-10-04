@@ -6,7 +6,7 @@ export default function Hero() {
                  bg-cover bg-center relative"
     >
       {/* Overlay yang lebih gelap untuk kontras yang lebih baik */}
-      <div className="absolute inset-0  backdrop-blur-lg bg-black/50"></div>
+      <div className="absolute inset-0  backdrop-blur-lg bg-black/20"></div>
 
       <div className="relative z-10 px-6 max-w-4xl">
         {/* Judul dengan kontras yang lebih baik */}
