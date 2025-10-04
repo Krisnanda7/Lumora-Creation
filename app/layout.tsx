@@ -1,5 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { useEffect } from "react";
+import AOSProvider from "@/components/AOSProvider";
 
 export const metadata = {
   title: "Lumora Creation",
@@ -16,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#FFF8F0] text-[#1A1A1A]">{children}</body>
+      <body className="bg-[#FFF8F0] text-[#1A1A1A]">
+        <AOSProvider>{children}</AOSProvider>
+      </body>
     </html>
   );
 }
