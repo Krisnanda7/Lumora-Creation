@@ -1,7 +1,7 @@
 export default function Differentiation() {
   return (
     <section id="differentation" className="py-20 px-6 md:px-20 bg-white">
-      <div data-aos="fade-right" data-aos-duration="1000">
+      <div data-aos="fade-right" data-aos-duration="2000">
         <h2 className="text-4xl md:text-5xl font-bold text-center  text-gray-800 mb-10 font-serif">
           Apa yang Membuat{" "}
           <span className="text-[#D4A017]">Lumora Creation</span> Unik?

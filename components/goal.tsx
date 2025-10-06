@@ -30,7 +30,7 @@ export default function Goal() {
         <div
           className="text-center mb-16"
           data-aos="fade-right"
-          data-aos-duration="1000"
+          data-aos-duration="2000"
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-serif">

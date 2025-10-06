@@ -1,7 +1,7 @@
 export default function Team() {
   return (
     <section id="team" className="py-16 px-6 md:px-20 bg-white text-center">
-      <div data-aos="fade-left" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-duration="2000">
         <h2 className="text-4xl md:text-5xl font-bold   text-gray-800 font-serif">
           Tim <span className="text-[#D4A017]">Lumora Creation</span>
         </h2>

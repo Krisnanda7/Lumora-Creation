@@ -30,7 +30,7 @@ export default function About() {
       className="py-20 px-6 md:px-20 bg-white relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
-        <div data-aos="fade-up" data-aos-duration="1000">
+        <div data-aos="fade-up" data-aos-duration="2000">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-8">
