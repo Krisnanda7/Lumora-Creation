@@ -52,7 +52,7 @@ export default function Team() {
           {/* Card 4 */}
           <div className="p-6 shadow-md rounded-lg bg-white w-56">
             <img
-              src="/team.jpg"
+              src="/satya.png"
               alt="satya"
               className="w-32 h-32 mx-auto rounded-full object-cover"
             />

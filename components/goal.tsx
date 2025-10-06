@@ -41,7 +41,12 @@ export default function Goal() {
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700">
               Kami memiliki tekad kuat untuk memulai{" "}
               <span className="font-semibold text-gray-800">Lumora</span> karena
-              melihat peluang besar dan kebutuhan lingkungan yang mendesak
+              kami melihat dan merasakan langsung dampak negatif dari polusi
+              minyak jelantah di lingkungan sekitar kami. Dengan memanfaatkan
+              minyak jelantah yang biasanya dibuang begitu saja, kami ingin
+              memberikan solusi yang tidak hanya ramah lingkungan, tetapi juga
+              memberikan nilai tambah melalui produk lilin aromaterapi yang kami
+              ciptakan.
             </p>
           </div>
 

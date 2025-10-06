@@ -6,7 +6,7 @@ import Team from "@/components/team";
 import Footer from "@/components/footer";
 import Differentiation from "@/components/differentation";
 import Goal from "@/components/goal";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
@@ -19,7 +19,6 @@ export default function Home() {
       <Goal />
       <Team />
       <Footer />
-      <Analytics />
     </main>
   );
 }
