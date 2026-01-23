@@ -79,7 +79,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.img
-            src="/1.png"
+            src="/bentukspesial.png"
             alt="product1"
             className="rounded-xl object-cover w-full col-span-2 row-span-2 shadow-lg
                      h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px]"
@@ -87,7 +87,7 @@ export default function Hero() {
           />
 
           <motion.img
-            src="/2.png"
+            src="/bentukspesial.png"
             alt="product2"
             className="rounded-xl object-cover w-full shadow-lg
                      h-[140px] sm:h-[165px] md:h-[190px] lg:h-[215px] xl:h-[240px]"
@@ -96,7 +96,7 @@ export default function Hero() {
           />
 
           <motion.img
-            src="/3.png"
+            src="/bentukspesial.png"
             alt="product3"
             className="rounded-xl object-cover w-full shadow-lg
                      h-[140px] sm:h-[165px] md:h-[190px] lg:h-[215px] xl:h-[240px]"
