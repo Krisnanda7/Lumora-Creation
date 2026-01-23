@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { useEffect } from "react";
 import AOSProvider from "@/components/AOSProvider";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Lumora Creation",
@@ -22,6 +23,8 @@ export default function RootLayout({
       <body className="bg-[#FFF8F0] text-[#1A1A1A]">
         <AOSProvider>{children}</AOSProvider>
       </body>
+      <Analytics />
+      <SpeedInsights />
     </html>
   );
 }
