@@ -14,7 +14,7 @@ export default function Product() {
   const specialProduct = {
     title: "Edisi Spesial",
     description: "Karya istimewa yang menggabungkan aroma terapi menenangkan.",
-    name: "Lilin Spesial ",
+    name: "Lilin Bentuk Spesial",
     img: "/bentukspesial.png",
   };
 
@@ -100,7 +100,7 @@ export default function Product() {
                   className="flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors shadow-md text-sm font-bold active:scale-95"
                 >
                   <MessageCircle size={20} />
-                  Tanya Edisi Spesial
+                  Tanya Produk ini
                 </button>
               </div>
             </div>
