@@ -19,7 +19,8 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               Kadek Diana Angelika Prasanti.
             </h3>
-            <p className="text-lg text-gray-600 ">Founder & Team Leader</p>
+            <p className="text-lg font-bold text-amber-600">CEO</p>
+            <p className="text-lg text-gray-600">Visionary Light</p>
           </div>
 
           {/* Card 2 */}
@@ -33,7 +34,8 @@ export default function Team() {
               {" "}
               Ni Komang Dela Damayanti.
             </h3>
-            <p className="text-lg text-gray-600 ">Co-Leader</p>
+            <p className="text-lg font-bold text-amber-600">Hustler</p>
+            <p className="text-lg text-gray-600">Growth Igniter</p>
           </div>
 
           {/* Card 3 */}
@@ -46,7 +48,8 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               I Dewa Gede Mas Bagus Krisnanda.
             </h3>
-            <p className="text-lg text-gray-600">Programming</p>
+            <p className="text-lg font-bold text-amber-600">Hacker</p>
+            <p className="text-lg text-gray-600">Sustainability Architect </p>
           </div>
 
           {/* Card 4 */}
@@ -59,7 +62,8 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               I Kadek Indra Satya Ananda.
             </h3>
-            <p className="text-lg text-gray-600">Designer</p>
+            <p className="text-lg font-bold text-amber-600">Hipster</p>
+            <p className="text-lg text-gray-600">Aesthetic Alchemist</p>
           </div>
           {/* Card 5 */}
           <div className="p-6 shadow-md rounded-lg bg-white w-56">
@@ -72,7 +76,8 @@ export default function Team() {
               {" "}
               I Made Dwitya Rastiawan.
             </h3>
-            <p className="text-lg text-gray-600">Hustler</p>
+            <p className="text-lg font-bold text-amber-600">Hustler</p>
+            <p className="text-lg text-gray-600">Growth Igniter</p>
           </div>
         </div>
       </div>
