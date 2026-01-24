@@ -73,8 +73,8 @@ export default function Hero() {
           {/* button hook see products */}
           <div className="mt-8 ">
             <button className="flex items-center  gap-2 bg-amber-600 hover:bg-amber-500 px-5 py-2 rounded-full transition-all text-sm font-bold shadow-lg active:scale-95">
-              <ArrowBigDown size={18} />
               <a href="#product">Check Our Products</a>
+              <ArrowBigDown size={18} />
             </button>
           </div>
         </motion.div>
