@@ -1,14 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
+import { ArrowBigDown, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       className="relative text-white py-20 px-6 lg:px-20 bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: "url('/icon.png')" }}
+      style={{ backgroundImage: "url('/')" }}
     >
       {/* Overlay gelap */}
-      <div className="absolute inset-0 bg-black/90"></div>
+      <div className="absolute inset-0 bg-black/95"></div>
 
       <div className="py-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
         {/* ======= Text Section ======= */}
@@ -68,10 +69,17 @@ export default function Hero() {
               </p>
             </div>
           </motion.div>
+
+          {/* button hook see products */}
+          <div className="mt-8 ">
+            <button className="flex items-center  gap-2 bg-amber-600 hover:bg-amber-500 px-5 py-2 rounded-full transition-all text-sm font-bold shadow-lg active:scale-95">
+              <ArrowBigDown size={18} />
+              <a href="#product">Check Our Products</a>
+            </button>
+          </div>
         </motion.div>
 
         {/* ======= Image Grid ======= */}
-        {/* ===== IMAGE GRID ===== */}
         <motion.div
           className="md:w-1/2 grid grid-cols-3 gap-4 relative z-10"
           initial={{ opacity: 0, x: 80 }}

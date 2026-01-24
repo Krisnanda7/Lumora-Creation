@@ -61,7 +61,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center justify-center md:justify-start gap-2">
               <FaPhone className="text-[#D4A017]" />
-              <a href="tel:+6281234567890">+62 813-3860-5537</a>
+              <a href="tel:+6281234567890">+6282144603278</a>
             </li>
             <li className="flex items-center justify-center md:justify-start gap-2">
               <FaMapMarkerAlt className="text-[#D4A017]" />

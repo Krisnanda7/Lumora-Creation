@@ -1,14 +1,20 @@
 "use client";
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import {
+  ArrowBigDown,
+  CircleQuestionMarkIcon,
+  CircleQuestionMark,
+  MessageCircle,
+} from "lucide-react";
+import { BiQuestionMark } from "react-icons/bi";
+import { MdQuestionMark } from "react-icons/md";
 
 export default function Product() {
   // Data untuk Produk Spesial
   const specialProduct = {
-    title: "Edisi Spesial: Balinese Heritage",
-    description:
-      "Karya istimewa yang menggabungkan aroma terapi menenangkan dengan ukiran tangan khas pengrajin lokal Bali.",
-    name: "Lilin Ukir Exclusive",
+    title: "Edisi Spesial",
+    description: "Karya istimewa yang menggabungkan aroma terapi menenangkan.",
+    name: "Lilin Spesial ",
     img: "/bentukspesial.png",
   };
 
@@ -35,6 +41,12 @@ export default function Product() {
     },
   ];
 
+  const customize = {
+    title: "Kustomisasi Produk",
+    description:
+      "Ciptakan lilin aromaterapi unik sesuai preferensi Anda, dari aroma hingga desain.",
+  };
+
   const handleOrder = (productName: string) => {
     const phone = "6282144603278";
     const message = encodeURIComponent(
@@ -49,15 +61,15 @@ export default function Product() {
         {/* Header Utama Seksi */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-bold text-[#1A1A1A] mb-4">
-            Produk dari <span className="text-amber-500">Lumora Creation</span>
+            Produk dari <span className="text-amber-400">Lumora Creation</span>
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto"></div>
         </div>
 
-        {/* === BAGIAN PRODUK SPESIAL (DI ATAS) === */}
+        {/* produk spesial */}
         <div className="mb-24">
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-bold text-amber-600 mb-2">
+            <h3 className="text-2xl font-bold text-amber-400 mb-2">
               {specialProduct.title}
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -85,7 +97,7 @@ export default function Product() {
                 </h4>
                 <button
                   onClick={() => handleOrder(specialProduct.name)}
-                  className="flex items-center gap-2 px-8 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition-colors shadow-md text-sm font-bold active:scale-95"
+                  className="flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors shadow-md text-sm font-bold active:scale-95"
                 >
                   <MessageCircle size={20} />
                   Tanya Edisi Spesial
@@ -127,7 +139,7 @@ export default function Product() {
                     </h4>
                     <button
                       onClick={() => handleOrder(item.name)}
-                      className="flex items-center gap-2 px-6 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition-colors shadow-md text-sm font-medium"
+                      className="flex items-center gap-2 px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors shadow-md text-sm font-medium"
                     >
                       <MessageCircle size={18} />
                       Tanya Produk
@@ -138,6 +150,20 @@ export default function Product() {
             </div>
           </div>
         ))}
+      </div>
+      {/* customize produk */}
+      <div className="mt-10 p-10 text-center">
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">
+          {customize.title}
+        </h3>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          {customize.description}
+        </p>
+      </div>
+      <div className="flex justify-center">
+        <button className="flex items-center  gap-2 bg-amber-400 hover:bg-amber-600 px-10 py-5 rounded-full transition-all  font-bold shadow-lg active:scale-95">
+          <a href="#product">Customize?</a>
+        </button>
       </div>
     </section>
   );

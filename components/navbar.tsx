@@ -20,12 +20,10 @@ export default function Navbar() {
 
   // Data Navigasi sesuai ID section di Landing Page
   const navLinks = [
+    { name: "Produk", href: "#product" },
     { name: "Tentang", href: "#about" },
     { name: "Perbandingan", href: "#differentation" },
     { name: "Manfaat", href: "#impact" },
-    { name: "Produk", href: "#product" },
-    { name: "Tujuan", href: "#goal" },
-    { name: "Tim", href: "#team" },
   ];
 
   return (
