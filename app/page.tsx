@@ -21,7 +21,6 @@ export default function Home() {
       <Goal />
       <Team />
       <Footer />
-      <Footer />
     </main>
   );
 }
