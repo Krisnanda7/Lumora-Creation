@@ -39,7 +39,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#team" className="hover:text-[#D4A017]">
-                Tim
+                Tim Lumora
               </a>
             </li>
           </ul>
