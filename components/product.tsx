@@ -863,9 +863,8 @@ export default function Product() {
                       className="text-center max-w-sm"
                     >
                       <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                        Event spesial Lumora Creation sedang disiapkan. Pantau
-                        terus untuk info koleksi & promo eksklusif yang akan
-                        hadir!
+                        Pantau terus untuk info koleksi & promo eksklusif yang
+                        akan hadir!
                       </p>
 
                       {/* Animasi titik-titik */}
