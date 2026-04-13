@@ -16,6 +16,7 @@ interface ProductItem {
   id: number;
   name: string;
   img: string;
+  emoji?: string;
   images?: string[]; // multiple images for slider
   description?: string;
 }
