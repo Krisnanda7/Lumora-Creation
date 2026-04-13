@@ -11,9 +11,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ============================================================
 // TYPES
-// ============================================================
 interface ProductItem {
   id: number;
   name: string;
@@ -26,6 +24,8 @@ interface Category {
   title: string;
   description: string;
   items: ProductItem[];
+  isEvent?: boolean;
+  eventStatus?: "coming_soon" | "active";
 }
 
 interface SpecialProduct {
@@ -37,9 +37,7 @@ interface SpecialProduct {
   productDescription?: string;
 }
 
-// ============================================================
 // POPUP / MODAL COMPONENT
-// ============================================================
 function ProductModal({
   product,
   onClose,
@@ -211,9 +209,7 @@ function ProductModal({
   );
 }
 
-// ============================================================
 // PRODUCT CARD (clickable)
-// ============================================================
 function ProductCard({
   item,
   isSpecial = false,
@@ -289,19 +285,17 @@ function ProductCard({
   );
 }
 
-// ============================================================
 // CUSTOMIZE MODAL
-// ============================================================
 const BENTUK_OPTIONS = [
-  { id: "bambu", label: "Bambu", img: "/bentuk1.png", emoji: "🎋" },
-  { id: "love", label: "Love", img: "/bentuk2.png", emoji: "🩷" },
-  { id: "teratai", label: "Teratai", img: "/bentuk3.png", emoji: "🪷" },
+  { id: "bambu", label: "Bambu", img: "/bentuk1.png" },
+  { id: "love", label: "Love", img: "/bentuk2.png" },
+  { id: "teratai", label: "Teratai", img: "/bentuk3.png" },
 ];
 
 const WADAH_OPTIONS = [
-  { id: "kaca-bulat", label: "Kaca Bulat", img: "/wadah1.png", emoji: "🫧" },
-  { id: "kaca-kecil", label: "Kaca Kecil", img: "/wadah2.png", emoji: "🥃" },
-  { id: "kelapa", label: "Tempurung Kelapa", img: "/wadah3.png", emoji: "🥥" },
+  { id: "kaca-kecil", label: "Kaca Kecil", img: "/wadah2.png" },
+  { id: "kaca-bulat", label: "Kaca Bulat", img: "/wadah1.png" },
+  // { id: "kelapa", label: "Tempurung Kelapa", img: "/wadah3.png" },
 ];
 
 type Step = "bentuk" | "wadah" | "summary";
@@ -341,7 +335,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
       <motion.div
-        className="relative z-10 w-full max-w-lg bg-[#FFF8F0] rounded-3xl overflow-hidden shadow-2xl"
+        className="relative z-10 w-full max-w-lg bg-[#FFF8F0] rounded-3xl overflow-hidden shadow-2xl mx-2"
         initial={{ scale: 0.88, opacity: 0, y: 40 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.88, opacity: 0, y: 40 }}
@@ -349,7 +343,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="bg-amber-500 px-6 pt-6 pb-5">
+        <div className="bg-amber-500 px-5 pt-5 pb-4">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-1.5 transition-all active:scale-90"
@@ -358,15 +352,15 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
             <X size={18} />
           </button>
 
-          <div className="flex items-center gap-2 mb-4">
-            <Sparkles size={20} className="text-white" />
-            <h3 className="text-white font-bold text-lg">
+          <div className="flex items-center gap-2 mb-4 pr-8">
+            <Sparkles size={20} className="text-white flex-shrink-0" />
+            <h3 className="text-white font-bold text-base">
               Buat Lilin Custom-mu
             </h3>
           </div>
 
           {/* Step indicator */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             {[
               { key: "bentuk", label: "Bentuk" },
               { key: "wadah", label: "Wadah" },
@@ -374,15 +368,15 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
             ].map((s, i) => (
               <div
                 key={s.key}
-                className="flex items-center gap-2 flex-1 last:flex-none"
+                className="flex items-center gap-1.5 flex-1 last:flex-none"
               >
                 <div
-                  className={`flex items-center gap-1.5 text-xs font-semibold transition-all ${
+                  className={`flex items-center gap-1 text-xs font-semibold transition-all flex-shrink-0 ${
                     i <= stepIdx ? "text-white" : "text-amber-200"
                   }`}
                 >
                   <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all flex-shrink-0 ${
                       i < stepIdx
                         ? "bg-white border-white text-amber-600"
                         : i === stepIdx
@@ -392,7 +386,6 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                   >
                     {i < stepIdx ? "✓" : i + 1}
                   </div>
-                  <span className="hidden sm:block">{s.label}</span>
                 </div>
                 {i < 2 && (
                   <div
@@ -407,7 +400,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Body */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <AnimatePresence mode="wait">
             {/* ── STEP 1: Pilih Bentuk ── */}
             {step === "bentuk" && (
@@ -418,21 +411,21 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.22 }}
               >
-                <p className="text-gray-700 font-semibold mb-4 text-center">
+                <p className="text-gray-700 font-semibold mb-4 text-center text-sm">
                   Pilih bentuk lilin yang kamu inginkan
                 </p>
-                <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
                   {BENTUK_OPTIONS.map((opt) => (
                     <button
                       key={opt.id}
                       onClick={() => setBentuk(opt.id)}
-                      className={`group relative rounded-2xl overflow-hidden border-2 transition-all duration-200 ${
+                      className={`group relative rounded-xl overflow-hidden border-2 transition-all duration-200 ${
                         bentuk === opt.id
-                          ? "border-amber-500 shadow-md scale-105"
+                          ? "border-amber-500 shadow-md scale-[1.03]"
                           : "border-gray-200 hover:border-amber-300"
                       }`}
                     >
-                      <div className="h-24 bg-gray-100 overflow-hidden">
+                      <div className="h-20 sm:h-24 bg-gray-100 overflow-hidden">
                         <img
                           src={opt.img}
                           alt={opt.label}
@@ -440,17 +433,17 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                         />
                       </div>
                       <div
-                        className={`py-2 text-xs font-semibold text-center transition-colors ${
+                        className={`py-1.5 px-1 text-[11px] font-semibold text-center leading-tight transition-colors ${
                           bentuk === opt.id
                             ? "bg-amber-500 text-white"
                             : "bg-white text-gray-700"
                         }`}
                       >
-                        {opt.emoji} {opt.label}
+                        {opt.label}
                       </div>
                       {bentuk === opt.id && (
                         <div className="absolute top-1.5 right-1.5 bg-amber-500 rounded-full p-0.5">
-                          <CheckCircle2 size={14} className="text-white" />
+                          <CheckCircle2 size={13} className="text-white" />
                         </div>
                       )}
                     </button>
@@ -459,7 +452,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                 <button
                   disabled={!bentuk}
                   onClick={() => setStep("wadah")}
-                  className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-200 disabled:text-gray-400 text-white font-bold rounded-full transition-all active:scale-95 shadow"
+                  className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-200 disabled:text-gray-400 text-white font-bold rounded-full transition-all active:scale-95 shadow text-sm"
                 >
                   Lanjut Pilih Wadah →
                 </button>
@@ -475,21 +468,21 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.22 }}
               >
-                <p className="text-gray-700 font-semibold mb-4 text-center">
+                <p className="text-gray-700 font-semibold mb-4 text-center text-sm">
                   Pilih wadah untuk lilinmu
                 </p>
-                <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
                   {WADAH_OPTIONS.map((opt) => (
                     <button
                       key={opt.id}
                       onClick={() => setWadah(opt.id)}
-                      className={`group relative rounded-2xl overflow-hidden border-2 transition-all duration-200 ${
+                      className={`group relative rounded-xl overflow-hidden border-2 transition-all duration-200 ${
                         wadah === opt.id
-                          ? "border-amber-500 shadow-md scale-105"
+                          ? "border-amber-500 shadow-md scale-[1.03]"
                           : "border-gray-200 hover:border-amber-300"
                       }`}
                     >
-                      <div className="h-24 bg-gray-100 overflow-hidden">
+                      <div className="h-20 sm:h-24 bg-gray-100 overflow-hidden">
                         <img
                           src={opt.img}
                           alt={opt.label}
@@ -497,34 +490,35 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                         />
                       </div>
                       <div
-                        className={`py-2 text-xs font-semibold text-center transition-colors ${
+                        className={`py-1.5 px-1 text-[11px] font-semibold text-center leading-tight transition-colors ${
                           wadah === opt.id
                             ? "bg-amber-500 text-white"
                             : "bg-white text-gray-700"
                         }`}
                       >
-                        {opt.emoji} {opt.label}
+                        {opt.label}
                       </div>
                       {wadah === opt.id && (
                         <div className="absolute top-1.5 right-1.5 bg-amber-500 rounded-full p-0.5">
-                          <CheckCircle2 size={14} className="text-white" />
+                          <CheckCircle2 size={13} className="text-white" />
                         </div>
                       )}
                     </button>
                   ))}
                 </div>
 
-                <div className="flex gap-3">
+                {/* Stacked buttons on mobile, side by side on sm+ */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <button
                     onClick={() => setStep("bentuk")}
-                    className="flex-1 py-3 border-2 border-amber-400 text-amber-600 font-bold rounded-full transition-all hover:bg-amber-50 active:scale-95"
+                    className="w-full sm:flex-1 py-3 border-2 border-amber-400 text-amber-600 font-bold rounded-full transition-all hover:bg-amber-50 active:scale-95 text-sm"
                   >
                     ← Kembali
                   </button>
                   <button
                     disabled={!wadah}
                     onClick={() => setStep("summary")}
-                    className="flex-1 py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-200 disabled:text-gray-400 text-white font-bold rounded-full transition-all active:scale-95 shadow"
+                    className="w-full sm:flex-1 py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-200 disabled:text-gray-400 text-white font-bold rounded-full transition-all active:scale-95 shadow text-sm"
                   >
                     Lihat Ringkasan →
                   </button>
@@ -542,7 +536,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                 transition={{ duration: 0.22 }}
                 className="text-center"
               >
-                <div className="mb-5">
+                <div className="mb-4">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -551,18 +545,18 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                   >
                     🕯️
                   </motion.div>
-                  <h4 className="text-gray-800 font-bold text-lg">
+                  <h4 className="text-gray-800 font-bold text-base">
                     Pilihan Custom-mu
                   </h4>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-500 text-xs">
                     Ini yang akan dikirim ke WhatsApp kami
                   </p>
                 </div>
 
                 {/* Summary card */}
-                <div className="bg-white rounded-2xl border border-amber-200 overflow-hidden mb-5 text-left">
-                  <div className="flex items-center gap-4 p-4 border-b border-amber-100">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                <div className="bg-white rounded-2xl border border-amber-200 overflow-hidden mb-4 text-left">
+                  <div className="flex items-center gap-3 p-3 border-b border-amber-100">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
                       {selectedBentuk && (
                         <img
                           src={selectedBentuk.img}
@@ -572,16 +566,16 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                       )}
                     </div>
                     <div>
-                      <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide">
+                      <p className="text-[10px] text-amber-600 font-semibold uppercase tracking-wide">
                         Bentuk
                       </p>
-                      <p className="text-gray-800 font-bold">
+                      <p className="text-gray-800 font-bold text-sm">
                         {selectedBentuk?.emoji} {selectedBentuk?.label}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-4">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div className="flex items-center gap-3 p-3">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
                       {selectedWadah && (
                         <img
                           src={selectedWadah.img}
@@ -591,31 +585,31 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                       )}
                     </div>
                     <div>
-                      <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide">
+                      <p className="text-[10px] text-amber-600 font-semibold uppercase tracking-wide">
                         Wadah
                       </p>
-                      <p className="text-gray-800 font-bold">
+                      <p className="text-gray-800 font-bold text-sm">
                         {selectedWadah?.emoji} {selectedWadah?.label}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-gray-500 text-xs mb-5">
+                <p className="text-gray-500 text-xs mb-4 leading-relaxed">
                   Tim Lumora Creation akan membalas dan menginformasikan harga
                   serta estimasi pengerjaan via WhatsApp.
                 </p>
 
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <button
                     onClick={() => setStep("wadah")}
-                    className="flex-1 py-3 border-2 border-amber-400 text-amber-600 font-bold rounded-full transition-all hover:bg-amber-50 active:scale-95 text-sm"
+                    className="w-full sm:flex-1 py-3 border-2 border-amber-400 text-amber-600 font-bold rounded-full transition-all hover:bg-amber-50 active:scale-95 text-sm"
                   >
                     ← Ubah
                   </button>
                   <button
                     onClick={handleOrder}
-                    className="flex-1 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full transition-all active:scale-95 shadow flex items-center justify-center gap-2 text-sm"
+                    className="w-full sm:flex-1 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full transition-all active:scale-95 shadow flex items-center justify-center gap-2 text-sm"
                   >
                     <MessageCircle size={16} />
                     Pesan via WhatsApp
@@ -692,14 +686,6 @@ export default function Product() {
         "Lilin dalam wadah elegan yang dapat digunakan kembali secara berkelanjutan.",
       items: [
         {
-          id: 4,
-          name: "Wadah Kaca Bulat",
-          img: "/wadah1.png",
-          images: ["/wadah1.png", "/wadah1.png"],
-          description:
-            "Wadah kaca bulat transparan yang bisa digunakan kembali setelah lilin habis.",
-        },
-        {
           id: 5,
           name: "Wadah Kaca Kecil",
           img: "/wadah2.png",
@@ -708,14 +694,30 @@ export default function Product() {
             "Wadah kaca kecil minimalis, cocok untuk meja kerja atau rak dekorasi.",
         },
         {
-          id: 6,
-          name: "Wadah Ramah Tempurung Kelapa",
-          img: "/wadah3.png",
-          images: ["/wadah3.png", "/wadah3.png"],
+          id: 4,
+          name: "Wadah Kaca Bulat",
+          img: "/wadah1.png",
+          images: ["/wadah1.png", "/wadah1.png"],
           description:
-            "Dibuat dari tempurung kelapa asli — ramah lingkungan dan unik secara estetika.",
+            "Wadah kaca bulat transparan yang bisa digunakan kembali setelah lilin habis.",
         },
+        // {
+        //   id: 6,
+        //   name: "Wadah Ramah Tempurung Kelapa",
+        //   img: "/wadah3.png",
+        //   images: ["/wadah3.png", "/wadah3.png"],
+        //   description:
+        //     "Dibuat dari tempurung kelapa asli — ramah lingkungan dan unik secara estetika.",
+        // },
       ],
+    },
+    {
+      title: "Event",
+      description:
+        "Koleksi spesial yang hadir di event tertentu. Stay tuned untuk info terbaru!",
+      isEvent: true,
+      eventStatus: "coming_soon", // ← ganti ke "active" kalau sudah ada event, lalu isi items[]
+      items: [],
     },
   ];
 
@@ -784,16 +786,15 @@ export default function Product() {
             </div>
 
             {/* Tab pill switcher */}
-            <div className="flex justify-center mb-10">
-              <div className="relative flex bg-[#F5ECD7] rounded-full p-1.5 gap-1 shadow-inner">
+            <div className="flex justify-center mb-10 px-2">
+              <div className="relative flex bg-[#F5ECD7] rounded-full p-1.5 gap-0.5 shadow-inner w-full max-w-sm">
                 {categories.map((cat, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveTab(i)}
-                    className="relative z-10 px-7 py-2.5 rounded-full text-sm font-bold transition-colors duration-200"
+                    className="relative z-10 flex-1 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-200 text-center whitespace-nowrap"
                     style={{ color: activeTab === i ? "#fff" : "#92400e" }}
                   >
-                    {/* sliding highlight */}
                     {activeTab === i && (
                       <motion.div
                         layoutId="tab-highlight"
@@ -826,15 +827,94 @@ export default function Product() {
                   {categories[activeTab].description}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {categories[activeTab].items.map((item) => (
-                    <ProductCard
-                      key={item.id}
-                      item={item}
-                      onOpen={() => setSelectedProduct(item)}
-                    />
-                  ))}
-                </div>
+                {/* ── EVENT: Coming Soon state ── */}
+                {categories[activeTab].isEvent &&
+                categories[activeTab].eventStatus === "coming_soon" ? (
+                  <div className="flex flex-col items-center justify-center py-8 px-4">
+                    {/* Gambar coming soon — centered, rounded, dengan glow */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.92 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      className="relative mb-8"
+                    >
+                      {/* Glow di belakang gambar */}
+                      <div className="absolute inset-0 rounded-3xl bg-amber-300/40 blur-2xl scale-110 pointer-events-none" />
+                      <img
+                        src="/comingsoon.png"
+                        alt="Coming Soon"
+                        className="relative w-72 sm:w-96 md:w-[440px] rounded-3xl shadow-2xl object-cover"
+                      />
+                    </motion.div>
+
+                    {/* Teks & CTA */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2, duration: 0.35 }}
+                      className="text-center max-w-sm"
+                    >
+                      <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                        Event spesial Lumora Creation sedang disiapkan. Pantau
+                        terus untuk info koleksi & promo eksklusif yang akan
+                        hadir!
+                      </p>
+
+                      {/* Animasi titik-titik */}
+                      <div className="flex justify-center gap-2 mb-6">
+                        {[0, 0.25, 0.5].map((delay, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{
+                              scale: [1, 1.5, 1],
+                              opacity: [0.4, 1, 0.4],
+                            }}
+                            transition={{
+                              repeat: Infinity,
+                              duration: 1.1,
+                              delay,
+                              ease: "easeInOut",
+                            }}
+                            className="w-2 h-2 rounded-full bg-amber-400"
+                          />
+                        ))}
+                      </div>
+
+                      <a
+                        href={`https://wa.me/6282144603278?text=${encodeURIComponent("Halo Lumora Creation! Saya ingin mendapatkan info terbaru tentang event yang akan datang 🕯️")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-full shadow-md transition-all active:scale-95"
+                      >
+                        <MessageCircle size={16} />
+                        Beritahu Saya via WhatsApp
+                      </a>
+                    </motion.div>
+                  </div>
+                ) : categories[activeTab].isEvent &&
+                  categories[activeTab].eventStatus === "active" ? (
+                  /* ── EVENT: Active — tampilkan produk normal ── */
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {categories[activeTab].items.map((item) => (
+                      <ProductCard
+                        key={item.id}
+                        item={item}
+                        onOpen={() => setSelectedProduct(item)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  /* ── Koleksi biasa ── */
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {categories[activeTab].items.map((item) => (
+                      <ProductCard
+                        key={item.id}
+                        item={item}
+                        onOpen={() => setSelectedProduct(item)}
+                      />
+                    ))}
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
