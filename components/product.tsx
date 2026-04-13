@@ -11,12 +11,13 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// ============================================================
 // TYPES
+// ============================================================
 interface ProductItem {
   id: number;
   name: string;
   img: string;
-  emoji?: string;
   images?: string[]; // multiple images for slider
   description?: string;
 }
@@ -38,7 +39,9 @@ interface SpecialProduct {
   productDescription?: string;
 }
 
+// ============================================================
 // POPUP / MODAL COMPONENT
+// ============================================================
 function ProductModal({
   product,
   onClose,
@@ -210,7 +213,9 @@ function ProductModal({
   );
 }
 
+// ============================================================
 // PRODUCT CARD (clickable)
+// ============================================================
 function ProductCard({
   item,
   isSpecial = false,
@@ -286,7 +291,9 @@ function ProductCard({
   );
 }
 
+// ============================================================
 // CUSTOMIZE MODAL
+// ============================================================
 const BENTUK_OPTIONS = [
   { id: "bambu", label: "Bambu", img: "/bentuk1.png" },
   { id: "love", label: "Love", img: "/bentuk2.png" },
@@ -571,7 +578,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                         Bentuk
                       </p>
                       <p className="text-gray-800 font-bold text-sm">
-                        {selectedBentuk?.emoji} {selectedBentuk?.label}
+                        {selectedBentuk?.label}
                       </p>
                     </div>
                   </div>
@@ -590,7 +597,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                         Wadah
                       </p>
                       <p className="text-gray-800 font-bold text-sm">
-                        {selectedWadah?.emoji} {selectedWadah?.label}
+                        {selectedWadah?.label}
                       </p>
                     </div>
                   </div>
