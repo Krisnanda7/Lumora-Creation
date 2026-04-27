@@ -33,7 +33,7 @@ export default function Goal() {
           data-aos-duration="2000"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-serif">
+            <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-sans-serif italic">
               Tujuan dari{" "}
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>

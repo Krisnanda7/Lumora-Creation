@@ -753,7 +753,7 @@ export default function Product() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-[#1A1A1A] mb-4">
+            <h2 className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4">
               Produk dari{" "}
               <span className="text-amber-400">Lumora Creation</span>
             </h2>
