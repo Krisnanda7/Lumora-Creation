@@ -67,17 +67,17 @@ function CursorGlow() {
     return () => window.removeEventListener("mousemove", move);
   }, [x, y]);
 
-  return (
-    <motion.div
-      className="pointer-events-none fixed z-0 w-[400px] h-[400px] rounded-full"
-      style={{
-        x: springX,
-        y: springY,
-        background:
-          "radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 70%)",
-      }}
-    />
-  );
+  // return (
+  //   <motion.div
+  //     className="pointer-events-none fixed z-0 w-[400px] h-[400px] rounded-full"
+  //     style={{
+  //       x: springX,
+  //       y: springY,
+  //       background:
+  //         "radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 70%)",
+  //     }}
+  //   />
+  // );
 }
 
 // ── Floating product pill card ───────────────────────────────

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Impact() {
   return (
     <section id="impact" className="py-20 px-6 md:px-20 bg-white text-center">
