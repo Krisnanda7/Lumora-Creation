@@ -52,33 +52,33 @@ function Particles() {
 }
 
 // ── Magnetic cursor follower ─────────────────────────────────
-function CursorGlow() {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 60, damping: 18 });
-  const springY = useSpring(y, { stiffness: 60, damping: 18 });
+// function CursorGlow() {
+//   const x = useMotionValue(0);
+//   const y = useMotionValue(0);
+//   const springX = useSpring(x, { stiffness: 60, damping: 18 });
+//   const springY = useSpring(y, { stiffness: 60, damping: 18 });
 
-  useEffect(() => {
-    const move = (e: MouseEvent) => {
-      x.set(e.clientX - 200);
-      y.set(e.clientY - 200);
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, [x, y]);
+//   useEffect(() => {
+//     const move = (e: MouseEvent) => {
+//       x.set(e.clientX - 200);
+//       y.set(e.clientY - 200);
+//     };
+//     window.addEventListener("mousemove", move);
+//     return () => window.removeEventListener("mousemove", move);
+//   }, [x, y]);
 
-  // return (
-  //   <motion.div
-  //     className="pointer-events-none fixed z-0 w-[400px] h-[400px] rounded-full"
-  //     style={{
-  //       x: springX,
-  //       y: springY,
-  //       background:
-  //         "radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 70%)",
-  //     }}
-  //   />
-  // );
-}
+//   return (
+//     <motion.div
+//       className="pointer-events-none fixed z-0 w-[400px] h-[400px] rounded-full"
+//       style={{
+//         x: springX,
+//         y: springY,
+//         background:
+//           "radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 70%)",
+//       }}
+//     />
+//   );
+// }
 
 // ── Floating product pill card ───────────────────────────────
 function FloatCard({
@@ -191,7 +191,7 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden flex items-center"
       style={{ backgroundColor: "#080603" }}
     >
-      <CursorGlow />
+      {/* <CursorGlow /> */}
       <Particles />
 
       {/* ── Grain texture ── */}
