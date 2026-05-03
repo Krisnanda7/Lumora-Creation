@@ -10,7 +10,7 @@ export default function Differentiation() {
         <div className="overflow-x-auto">
           <table className="w-full border border-gray-300 text-left lg:text-lg text-sm">
             <thead>
-              <tr className="bg-[#D4A017] text-white text-center">
+              <tr className="bg-white text-white text-center">
                 <th className="px-4 py-3 text-center text-gray-800">Aspek</th>
                 <th className="px-4 py-3 text-center text-gray-800">
                   Lilin Biasa

@@ -390,7 +390,7 @@ export default function Hero() {
           >
             <a
               href="#product"
-              className="group relative overflow-hidden bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.4)] hover:shadow-[0_0_55px_rgba(217,119,6,0.55)] hover:scale-[1.03] active:scale-[0.98]"
+              className="group relative overflow-hidden bg-[#D4A017] hover:bg-amber-500 text-white text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.4)] hover:shadow-[0_0_55px_rgba(217,119,6,0.55)] hover:scale-[1.03] active:scale-[0.98]"
             >
               {/* shimmer */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12" />
