@@ -26,7 +26,7 @@ function Particles() {
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full bg-amber-400"
+          className="absolute rounded-full bg-[#D4A017]"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
@@ -143,7 +143,7 @@ function StatChip({
       className="flex flex-col"
     >
       <span
-        className="text-amber-400 font-black leading-none"
+        className="text-[#D4A017] font-black leading-none"
         style={{
           fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
           fontFamily: "'Georgia', serif",
@@ -264,18 +264,18 @@ export default function Hero() {
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 bg-amber-900/20 border border-amber-700/30 rounded-full px-4 py-1.5 mb-5"
           >
-            <Sparkles size={10} className="text-amber-400" />
+            <Sparkles size={10} className="text-[#D4A017]" />
             <span
               className="text-amber-400/80 text-[9px] tracking-[0.28em] uppercase"
               style={{ fontFamily: "sans-serif" }}
             >
               Eco-Friendly · Zero Waste · Handcrafted
             </span>
-            <Sparkles size={10} className="text-amber-400" />
+            <Sparkles size={10} className="text-[#D4A017]" />
           </motion.div>
 
           {/* Brand */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -283,14 +283,18 @@ export default function Hero() {
             style={{ fontFamily: "sans-serif" }}
           >
             Lumora Creation
-          </motion.p>
+          </motion.p> */}
 
           {/* Headline */}
-          <div className="mb-6 space-y-0.5">
+          <div className="mb-6 space-y-0.5 mt-5">
             {[
               { text: "Lilin", italic: false, delay: 0.28 },
               { text: "Aromaterapi", italic: true, delay: 0.38 },
-              { text: "dari Jelantah", italic: false, delay: 0.48 },
+              {
+                text: "dari minyak Jelantah",
+                italic: false,
+                delay: 0.48,
+              },
             ].map(({ text, italic, delay }) => (
               <div key={text} className="overflow-hidden">
                 <motion.h1
@@ -301,10 +305,10 @@ export default function Hero() {
                   style={{
                     fontSize: "clamp(2.4rem, 8vw, 4.2rem)",
                     letterSpacing: "-0.025em",
-                    fontFamily: "'Georgia', 'Times New Roman', serif",
+                    fontFamily: "cinzel.style.fontFamily,",
                     ...(italic
                       ? {
-                          WebkitTextStroke: "1.5px #d97706",
+                          WebkitTextStroke: "1.5px #D4A017",
                           color: "transparent",
                         }
                       : { color: "#f5f0e8" }),
@@ -323,7 +327,7 @@ export default function Hero() {
             transition={{ delay: 0.65, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="origin-left h-px w-20 mb-5"
             style={{
-              background: "linear-gradient(to right, #d97706, transparent)",
+              background: "linear-gradient(to right, #D4A017, transparent)",
             }}
           />
 
@@ -348,15 +352,15 @@ export default function Hero() {
           >
             {[
               { num: "100%", label: "Daur Ulang", delay: 0.84 },
-              { num: "12+", label: "Varian Aroma", delay: 0.92 },
-              { num: "Zero", label: "Limbah Baru", delay: 1.0 },
+              { num: "5+", label: "Varian Aroma", delay: 0.92 },
+              // { num: "Zero", label: "Limbah Baru", delay: 1.0 },
             ].map((s) => (
               <StatChip key={s.label} {...s} />
             ))}
           </motion.div>
 
           {/* Stars social proof */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.02, duration: 0.6 }}
@@ -373,7 +377,7 @@ export default function Hero() {
               ))}
             </div>
             <span className="text-stone-500 text-xs">200+ pelanggan puas</span>
-          </motion.div>
+          </motion.div> */}
 
           {/* CTAs */}
           <motion.div
@@ -514,25 +518,25 @@ export default function Hero() {
             label="100% Eco"
             sub="Zero Waste"
             delay={1.1}
-            className="top-2 left-2 lg:-top-6 lg:-left-4"
+            className="top-2 left-2 lg:-top-0 lg:-left-0"
           />
           <FloatCard
             emoji="🕯️"
-            label="12+ Aroma"
+            label="5+ Aroma"
             sub="Pilihan Wangi"
             delay={1.25}
-            className="top-1/3 right-2 lg:-right-8"
+            className="top-1/4 right-2 lg:-right-0"
           />
           <FloatCard
             emoji="♻️"
             label="Daur Ulang"
             sub="Minyak Jelantah"
             delay={1.4}
-            className="bottom-16 left-2 lg:-bottom-4 lg:-left-10"
+            className=" top-1/2 bottom-16 left-2 lg:-bottom-4 lg:-left-0"
           />
 
           {/* Rating badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.55, duration: 0.6, ease: "backOut" }}
@@ -552,7 +556,7 @@ export default function Hero() {
               200+ happy customers
             </p>
             <p className="text-stone-500 text-[9px]">⭐ 4.9 / 5.0</p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
 
@@ -564,27 +568,6 @@ export default function Hero() {
             "linear-gradient(to bottom, transparent, rgba(8,6,3,0.95))",
         }}
       />
-
-      {/* ── Scroll hint ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-        style={{ fontFamily: "sans-serif" }}
-      >
-        <span className="text-stone-600 text-[9px] tracking-[0.25em] uppercase">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0], opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 1.6, repeat: Infinity }}
-          className="w-px h-8"
-          style={{
-            background: "linear-gradient(to bottom, #d97706, transparent)",
-          }}
-        />
-      </motion.div>
     </section>
   );
 }

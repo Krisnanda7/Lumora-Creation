@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link
             href="/"
-            className="text-2xl font-serif font-bold text-amber-500 hover:text-amber-400 transition-colors"
+            className="text-2xl font-sans-serif font-bold text-[#D4A017] hover:text-amber-300 transition-colors"
           >
             Lumora Creation
           </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Desktop Pesan Button */}
         <div className="hidden md:flex gap-6 items-center">
           <button
-            className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 px-5 py-2 rounded-full transition-all text-sm font-bold shadow-lg active:scale-95"
+            className="flex items-center gap-2 bg-[#D4A017] hover:bg-amber-500 px-5 py-2 rounded-full transition-all text-sm font-bold shadow-lg active:scale-95"
             onClick={handleWhatsAppOrder}
           >
             <MessageCircle size={18} />
@@ -67,13 +67,13 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-4">
           <button
             onClick={handleWhatsAppOrder}
-            className="text-amber-500 active:scale-90"
+            className="text-[#D4A017] active:scale-90"
           >
             <MessageCircle size={24} />
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-gray-200 hover:text-amber-500 transition-colors"
+            className="p-2 text-gray-200 hover:text-[#D4A017] transition-colors"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -86,7 +86,7 @@ export default function Navbar() {
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex justify-between items-center p-5 border-b border-gray-800">
-          <span className="font-semibold text-lg text-amber-500">Menu</span>
+          <span className="font-semibold text-lg text-[#D4A017]">Menu</span>
           <button onClick={() => setIsOpen(false)} className="text-gray-300">
             <X size={26} />
           </button>
@@ -98,7 +98,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="hover:text-amber-500 transition-colors"
+              className="hover:text-[#D4A017] transition-colors"
             >
               {link.name}
             </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
         {/* Info Tambahan */}
         <div className="border-t border-gray-800 mt-8 pt-6 px-6 text-xs text-gray-400 space-y-4">
           <div className="flex items-center gap-3">
-            <MapPin size={14} className="text-amber-500" />
+            <MapPin size={14} className="text-[#D4A017]" />
             <p>Lumora Workshop, Indonesia</p>
           </div>
         </div>
