@@ -167,22 +167,23 @@ function StatChip({
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  // SESUDAH — ganti dengan ini
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const yParallax = useTransform(
     scrollYProgress,
     [0, 1],
     isMobile ? [0, 0] : [0, -100],
   );
-  const scaleImg = useTransform(
-    scrollYProgress,
-    [0, 0.6],
-    isMobile ? [1, 1] : [1, 1.12],
-  );
-  const opacityImg = useTransform(
-    scrollYProgress,
-    [0, 0.7],
-    isMobile ? [1, 1] : [1, 0],
-  );
+  const scaleImg = useTransform(scrollYProgress, [0, 0.6], [1, 1.08]);
+  const opacityImg = useTransform(scrollYProgress, [0, 0.7], [1, 1]); // ← hilangkan fade out
 
   return (
     <section
@@ -472,10 +473,10 @@ export default function Hero() {
             />
 
             <motion.div
-              style={{ scale: scaleImg, opacity: opacityImg }}
               className="relative rounded-[2rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.75)]"
-              // mobile: smaller, desktop: full size
               style={{
+                scale: scaleImg,
+                opacity: opacityImg,
                 width: "clamp(240px, 70vw, 360px)",
                 height: "clamp(300px, 55vw, 460px)",
               }}
@@ -534,29 +535,6 @@ export default function Hero() {
             delay={1.4}
             className=" top-1/2 bottom-16 left-2 lg:-bottom-4 lg:-left-0"
           />
-
-          {/* Rating badge */}
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.55, duration: 0.6, ease: "backOut" }}
-            className="absolute bottom-8 right-2 lg:bottom-16 lg:-right-4 z-20 bg-[#0f0b06]/85 backdrop-blur-xl border border-amber-700/30 rounded-2xl px-3 py-2.5 lg:px-4 lg:py-3 shadow-xl"
-            style={{ fontFamily: "sans-serif" }}
-          >
-            <div className="flex items-center gap-1 mb-1">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  size={9}
-                  className="text-amber-400 fill-amber-400"
-                />
-              ))}
-            </div>
-            <p className="text-white text-[11px] font-bold">
-              200+ happy customers
-            </p>
-            <p className="text-stone-500 text-[9px]">⭐ 4.9 / 5.0</p>
-          </motion.div> */}
         </motion.div>
       </div>
 
