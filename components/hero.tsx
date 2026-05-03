@@ -404,7 +404,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: yParallax }}
-          className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-20 lg:pt-0 lg:pb-0"
+          className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-6 lg:pt-0 lg:pb-0"
         >
           {/* Outer decorative rings — desktop only (too large for mobile) */}
           <motion.div
@@ -501,21 +501,21 @@ export default function Hero() {
             label="100% Eco"
             sub="Zero Waste"
             delay={1.1}
-            className="-top-2 -left-2 lg:-top-6 lg:-left-4"
+            className="top-2 left-2 lg:-top-6 lg:-left-4"
           />
           <FloatCard
             emoji="🕯️"
             label="12+ Aroma"
             sub="Pilihan Wangi"
             delay={1.25}
-            className="top-1/3 -right-3 lg:-right-8"
+            className="top-1/3 right-2 lg:-right-8"
           />
           <FloatCard
             emoji="♻️"
             label="Daur Ulang"
             sub="Minyak Jelantah"
             delay={1.4}
-            className="-bottom-2 -left-3 lg:-bottom-4 lg:-left-10"
+            className="bottom-16 left-2 lg:-bottom-4 lg:-left-10"
           />
 
           {/* Rating badge */}
@@ -523,7 +523,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.55, duration: 0.6, ease: "backOut" }}
-            className="absolute bottom-12 -right-2 lg:bottom-16 lg:-right-4 z-20 bg-[#0f0b06]/85 backdrop-blur-xl border border-amber-700/30 rounded-2xl px-3 py-2.5 lg:px-4 lg:py-3 shadow-xl"
+            className="absolute bottom-8 right-2 lg:bottom-16 lg:-right-4 z-20 bg-[#0f0b06]/85 backdrop-blur-xl border border-amber-700/30 rounded-2xl px-3 py-2.5 lg:px-4 lg:py-3 shadow-xl"
             style={{ fontFamily: "sans-serif" }}
           >
             <div className="flex items-center gap-1 mb-1">
