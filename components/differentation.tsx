@@ -1,72 +1,69 @@
+"use client";
+
 export default function Differentiation() {
+  const data = [
+    {
+      aspek: "Bahan Baku",
+      biasa: "Minyak baru / parafin",
+      lumora: "Minyak jelantah daur ulang",
+    },
+    {
+      aspek: "Fungsionalitas",
+      biasa: "Dekorasi & penerangan",
+      lumora: "Penerangan + Aromaterapi + Solusi lingkungan",
+    },
+    {
+      aspek: "Manfaat",
+      biasa: "Estetika saja",
+      lumora: "Estetika + relaksasi (aromaterapi)",
+    },
+    {
+      aspek: "Target Pasar",
+      biasa: "Acara & dekorasi",
+      lumora: "Gen Z, Milenial, keluarga, eco-community",
+    },
+    {
+      aspek: "Posisi Brand",
+      biasa: "Lilin dekoratif",
+      lumora: "Eco product dengan dampak sosial",
+    },
+  ];
+
   return (
-    <section id="differentation" className="py-20 px-6 md:px-20 bg-white">
-      <div data-aos="fade-right" data-aos-duration="2000">
-        <h2 className="text-4xl md:text-5xl font-bold text-center  text-gray-800 mb-10 font-sans-serif italic">
-          Apa yang Membuat{" "}
-          <span className="text-[#D4A017]">Lumora Creation</span> Unik?
-        </h2>
-        <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
-        <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 text-left lg:text-lg text-sm">
-            <thead>
-              <tr className="bg-white text-white text-center">
-                <th className="px-4 py-3 text-center text-gray-800">Aspek</th>
-                <th className="px-4 py-3 text-center text-gray-800">
-                  Lilin Biasa
-                </th>
-                <th className="px-4 py-3 text-center text-gray-800">Lumora</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border px-4 py-3 text-center">Bahan Baku</td>
-                <td className="border px-4 py-3 text-center">
-                  Minyak baru atau parafin
-                </td>
-                <td className="border px-4 py-3 text-center font-semibold">
-                  Minyak jelantah daur ulang
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-4 py-3 text-center">Fungsionalitas</td>
-                <td className="border px-4 py-3 text-center">
-                  Dekorasi & Penerangan
-                </td>
-                <td className="border px-4 py-3 text-center font-semibold">
-                  Penerangan, Aromaterapi, & Solusi Lingkungan
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-4 py-3 text-center">
-                  Manfaat Tambahan
-                </td>
-                <td className="border px-4 py-3 text-center">Estetika</td>
-                <td className="border px-4 py-3 text-center font-semibold">
-                  Estetika + Aromaterapi untuk Relaksasi
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-4 py-3 text-center">
-                  Segmentasi Pasar
-                </td>
-                <td className="border px-4 py-3 text-center">Dekorasi acara</td>
-                <td className="border px-4 py-3 text-center font-semibold">
-                  Gen Z, Milenial, Keluarga, Komunitas Eco-Friendly
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-4 py-3 text-center">Posisi Merek</td>
-                <td className="border px-4 py-3 text-center">
-                  Produk lilin estetis
-                </td>
-                <td className="border px-4 py-3 text-center font-semibold">
-                  Produk Ramah Lingkungan dengan Dampak Sosial
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <section className="py-20 px-6 md:px-20 bg-gray-50">
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-4 italic">
+        Apa yang Membuat <span className="text-[#D4A017]">Lumora Creation</span>{" "}
+        Unik?
+      </h2>
+
+      <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-12 rounded-full"></div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {/* Header */}
+        <div></div>
+        <div className="text-center font-semibold text-gray-600">
+          Lilin Biasa
         </div>
+        <div className="text-center font-semibold text-[#D4A017]">Lumora</div>
+
+        {data.map((item, index) => (
+          <div key={index} className="contents">
+            {/* Aspek */}
+            <div className="bg-white shadow-md rounded-xl p-4 font-semibold text-gray-700">
+              {item.aspek}
+            </div>
+
+            {/* Lilin biasa */}
+            <div className="bg-white shadow-md rounded-xl p-4 text-gray-500 text-center">
+              {item.biasa}
+            </div>
+
+            {/* Lumora (highlight) */}
+            <div className="bg-[#D4A017]/10 border border-[#D4A017] shadow-md rounded-xl p-4 text-center font-semibold text-gray-800">
+              {item.lumora}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
