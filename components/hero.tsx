@@ -241,15 +241,15 @@ export default function Hero() {
       />
 
       {/* ══ Main layout ══════════════════════════════════════ */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 py-24 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 pt-6 pb-28 lg:py-24 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-center">
         {/* ══ LEFT: TEXT ══════════════════════════════════════ */}
-        <div className="w-full order-2 lg:order-1">
+        <div className="w-full order-1 lg:order-1">
           {/* Badge pill */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 bg-amber-900/20 border border-amber-700/30 rounded-full px-4 py-1.5 mb-7"
+            className="inline-flex items-center gap-2 bg-amber-900/20 border border-amber-700/30 rounded-full px-4 py-1.5 mb-5"
           >
             <Sparkles size={10} className="text-amber-400" />
             <span
@@ -266,14 +266,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-amber-500 text-sm font-semibold tracking-[0.22em] uppercase mb-4"
+            className="text-amber-500 text-sm font-semibold tracking-[0.22em] uppercase mb-3"
             style={{ fontFamily: "sans-serif" }}
           >
             Lumora Creation
           </motion.p>
 
-          {/* Headline — three lines with stagger */}
-          <div className="mb-8 space-y-0.5">
+          {/* Headline */}
+          <div className="mb-6 space-y-0.5">
             {[
               { text: "Lilin", italic: false, delay: 0.28 },
               { text: "Aromaterapi", italic: true, delay: 0.38 },
@@ -286,7 +286,7 @@ export default function Hero() {
                   transition={{ delay, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className={`font-black uppercase leading-[0.95] ${italic ? "italic" : ""}`}
                   style={{
-                    fontSize: "clamp(2.6rem, 5vw, 4.2rem)",
+                    fontSize: "clamp(2.4rem, 8vw, 4.2rem)",
                     letterSpacing: "-0.025em",
                     fontFamily: "'Georgia', 'Times New Roman', serif",
                     ...(italic
@@ -303,51 +303,12 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Mobile image */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="block lg:hidden mb-8 rounded-2xl overflow-hidden relative shadow-[0_24px_60px_rgba(0,0,0,0.7)]"
-            style={{ height: "280px" }}
-          >
-            <img
-              src="/bentukspesial.png"
-              alt="Lumora candle"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: "center 40%" }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(160deg, transparent 40%, rgba(8,6,3,0.75) 100%)",
-              }}
-            />
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-black/50 backdrop-blur-md rounded-xl px-3 py-2 border border-white/10">
-                <p
-                  className="text-amber-400 text-[10px] tracking-widest uppercase mb-0.5"
-                  style={{ fontFamily: "sans-serif" }}
-                >
-                  Signature Collection
-                </p>
-                <p
-                  className="text-white text-sm font-semibold"
-                  style={{ fontFamily: "sans-serif" }}
-                >
-                  Ocean Breeze · Minyak Jelantah
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Divider + body */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.65, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="origin-left h-px w-20 mb-7"
+            className="origin-left h-px w-20 mb-5"
             style={{
               background: "linear-gradient(to right, #d97706, transparent)",
             }}
@@ -357,8 +318,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.72, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-stone-400 leading-relaxed mb-10 max-w-[420px]"
-            style={{ fontFamily: "sans-serif", fontSize: "0.92rem" }}
+            className="text-stone-400 leading-relaxed mb-7 max-w-[420px]"
+            style={{ fontFamily: "sans-serif", fontSize: "0.9rem" }}
           >
             Ciptakan suasana hangat di rumah Anda sambil mendukung gaya hidup
             berkelanjutan. Setiap lilin kami lahir dari minyak jelantah yang
@@ -370,7 +331,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.82 }}
-            className="flex gap-8 mb-12"
+            className="flex gap-6 lg:gap-8 mb-8"
           >
             {[
               { num: "100%", label: "Daur Ulang", delay: 0.84 },
@@ -382,11 +343,11 @@ export default function Hero() {
           </motion.div>
 
           {/* Stars social proof */}
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.02, duration: 0.6 }}
-            className="flex items-center gap-2 mb-8"
+            className="flex items-center gap-2 mb-7"
             style={{ fontFamily: "sans-serif" }}
           >
             <div className="flex">
@@ -399,7 +360,7 @@ export default function Hero() {
               ))}
             </div>
             <span className="text-stone-500 text-xs">200+ pelanggan puas</span>
-          </motion.div> */}
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -443,26 +404,34 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: yParallax }}
-          className="relative hidden lg:flex items-center justify-center order-1 lg:order-2"
+          className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-20 lg:pt-0 lg:pb-0"
         >
-          {/* Outer decorative rings */}
+          {/* Outer decorative rings — desktop only (too large for mobile) */}
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[520px] h-[520px] rounded-full border border-amber-800/15"
+            className="absolute hidden lg:block w-[520px] h-[520px] rounded-full border border-amber-800/15"
             style={{ borderStyle: "dashed" }}
           />
           <motion.div
             animate={{ rotate: [360, 0] }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[420px] h-[420px] rounded-full border border-amber-700/10"
+            className="absolute hidden lg:block w-[420px] h-[420px] rounded-full border border-amber-700/10"
+          />
+
+          {/* Mobile: smaller decorative ring */}
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            className="absolute lg:hidden w-[300px] h-[300px] rounded-full border border-amber-800/20"
+            style={{ borderStyle: "dashed" }}
           />
 
           {/* Glow behind image */}
           <motion.div
             animate={{ opacity: [0.4, 0.7, 0.4], scale: [0.95, 1.05, 0.95] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute w-80 h-80 rounded-full"
+            className="absolute w-64 h-64 lg:w-80 lg:h-80 rounded-full"
             style={{
               background:
                 "radial-gradient(circle, rgba(217,119,6,0.3) 0%, transparent 70%)",
@@ -475,7 +444,7 @@ export default function Hero() {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="relative z-10"
           >
-            {/* Decorative tilt frame */}
+            {/* Decorative tilt frames */}
             <div
               className="absolute -inset-3 rounded-[2.2rem] border border-amber-600/20"
               style={{ transform: "rotate(4deg)" }}
@@ -488,7 +457,11 @@ export default function Hero() {
             <motion.div
               style={{ scale: scaleImg, opacity: opacityImg }}
               className="relative rounded-[2rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.75)]"
-              style={{ width: "360px", height: "460px" }}
+              // mobile: smaller, desktop: full size
+              style={{
+                width: "clamp(240px, 70vw, 360px)",
+                height: "clamp(300px, 55vw, 460px)",
+              }}
             >
               <img
                 src="/bentukspesial.png"
@@ -496,7 +469,6 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 style={{ objectPosition: "center 40%" }}
               />
-              {/* Gradient overlay */}
               <div
                 className="absolute inset-0"
                 style={{
@@ -504,17 +476,16 @@ export default function Hero() {
                     "linear-gradient(170deg, transparent 45%, rgba(8,6,3,0.7) 100%)",
                 }}
               />
-              {/* Label inside image */}
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="bg-black/50 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-black/50 backdrop-blur-md rounded-xl px-3 py-2.5 border border-white/10">
                   <p
-                    className="text-amber-400 text-[10px] tracking-widest uppercase mb-0.5"
+                    className="text-amber-400 text-[9px] tracking-widest uppercase mb-0.5"
                     style={{ fontFamily: "sans-serif" }}
                   >
                     Signature Collection
                   </p>
                   <p
-                    className="text-white text-sm font-semibold"
+                    className="text-white text-xs lg:text-sm font-semibold"
                     style={{ fontFamily: "sans-serif" }}
                   >
                     Ocean Breeze · Minyak Jelantah
@@ -524,55 +495,57 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ── Floating cards around image ── */}
+          {/* ── Floating cards — repositioned for mobile ── */}
           <FloatCard
             emoji="🌿"
             label="100% Eco"
             sub="Zero Waste"
             delay={1.1}
-            className="-top-6 -left-4"
+            className="-top-2 -left-2 lg:-top-6 lg:-left-4"
           />
           <FloatCard
             emoji="🕯️"
             label="12+ Aroma"
             sub="Pilihan Wangi"
             delay={1.25}
-            className="top-1/3 -right-8"
+            className="top-1/3 -right-3 lg:-right-8"
           />
           <FloatCard
             emoji="♻️"
             label="Daur Ulang"
             sub="Minyak Jelantah"
             delay={1.4}
-            className="-bottom-4 -left-10"
+            className="-bottom-2 -left-3 lg:-bottom-4 lg:-left-10"
           />
 
           {/* Rating badge */}
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.55, duration: 0.6, ease: "backOut" }}
-            className="absolute bottom-16 -right-4 z-20 bg-[#0f0b06]/85 backdrop-blur-xl border border-amber-700/30 rounded-2xl px-4 py-3 shadow-xl"
+            className="absolute bottom-12 -right-2 lg:bottom-16 lg:-right-4 z-20 bg-[#0f0b06]/85 backdrop-blur-xl border border-amber-700/30 rounded-2xl px-3 py-2.5 lg:px-4 lg:py-3 shadow-xl"
             style={{ fontFamily: "sans-serif" }}
           >
             <div className="flex items-center gap-1 mb-1">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  size={10}
+                  size={9}
                   className="text-amber-400 fill-amber-400"
                 />
               ))}
             </div>
-            <p className="text-white text-xs font-bold">200+ happy customers</p>
-            <p className="text-stone-500 text-[10px]">⭐ 4.9 / 5.0</p>
-          </motion.div> */}
+            <p className="text-white text-[11px] font-bold">
+              200+ happy customers
+            </p>
+            <p className="text-stone-500 text-[9px]">⭐ 4.9 / 5.0</p>
+          </motion.div>
         </motion.div>
       </div>
 
       {/* ── Bottom fade ── */}
       <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 z-10"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-0 lg:h-32 z-10"
         style={{
           background:
             "linear-gradient(to bottom, transparent, rgba(8,6,3,0.95))",
