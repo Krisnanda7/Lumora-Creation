@@ -167,9 +167,22 @@ function StatChip({
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const yParallax = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const scaleImg = useTransform(scrollYProgress, [0, 0.6], [1, 1.12]);
-  const opacityImg = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  const yParallax = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, -100],
+  );
+  const scaleImg = useTransform(
+    scrollYProgress,
+    [0, 0.6],
+    isMobile ? [1, 1] : [1, 1.12],
+  );
+  const opacityImg = useTransform(
+    scrollYProgress,
+    [0, 0.7],
+    isMobile ? [1, 1] : [1, 0],
+  );
 
   return (
     <section
@@ -367,7 +380,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-5"
+            className="flex items-center gap-5 mb-10 lg:mb-0"
             style={{ fontFamily: "sans-serif" }}
           >
             <a
