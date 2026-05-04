@@ -1,22 +1,22 @@
 export default function Goal() {
   const goals = [
     {
-      icon: "📈",
-      title: "Tingkatkan Kapasitas Bisnis",
+      icon: "✨",
+      title: "Kualitas Premium Terjamin",
       description:
-        "Meningkatkan kapasitas bisnis kami melalui pengembangan strategi dan operasional yang lebih baik",
+        "Menyediakan lilin aromaterapi berkualitas tinggi dengan proses filtrasi minyak jelantah yang aman dan standar estetika terbaik.",
     },
     {
-      icon: "🎯",
-      title: "Dapatkan Bimbingan",
+      icon: "♻️",
+      title: "Ekosistem Berkelanjutan",
       description:
-        "Memperoleh bimbingan dan mentoring dari para ahli dalam pengembangan bisnis berkelanjutan",
+        "Memperluas jaringan pengumpulan limbah minyak jelantah dari masyarakat untuk diolah kembali menjadi produk bermanfaat.",
     },
     {
-      icon: "🌱",
-      title: "Ciptakan Dampak Nyata",
+      icon: "🤝",
+      title: "Kemitraan & Kolaborasi",
       description:
-        "Menciptakan dampak nyata dalam mengurangi polusi minyak jelantah di lingkungan",
+        "Membuka peluang kerja sama untuk pengadaan souvenir kustom, suplai dekorasi hotel, hingga workshop edukasi lingkungan.",
     },
   ];
 

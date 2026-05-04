@@ -263,7 +263,7 @@ function ProductCard({
         </div>
 
         {isSpecial && (
-          <div className="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+          <div className="absolute top-4 left-4 bg-[#D4A017] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
             Limited Edition
           </div>
         )}
@@ -282,7 +282,7 @@ function ProductCard({
         >
           {name}
         </h4>
-        <div className="flex items-center gap-2 px-6 py-2 bg-amber-500 text-white rounded-full text-sm font-medium shadow-md">
+        <div className="flex items-center gap-2 px-6 py-2 bg-[#D4A017] text-white rounded-full text-sm font-medium shadow-md">
           <MessageCircle size={16} />
           {isSpecial ? "Tanya Produk ini" : "Tanya Produk"}
         </div>
@@ -351,7 +351,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar */}
-        <div className="bg-amber-500 px-5 pt-5 pb-4">
+        <div className="bg-[#D4A017] px-5 pt-5 pb-4">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-1.5 transition-all active:scale-90"
@@ -388,7 +388,7 @@ function CustomizeModal({ onClose }: { onClose: () => void }) {
                       i < stepIdx
                         ? "bg-white border-white text-amber-600"
                         : i === stepIdx
-                          ? "bg-amber-600 border-white text-white"
+                          ? "bg-[#D4A017] border-white text-white"
                           : "bg-transparent border-amber-300 text-amber-300"
                     }`}
                   >
@@ -755,15 +755,15 @@ export default function Product() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4">
               Produk dari{" "}
-              <span className="text-amber-400">Lumora Creation</span>
+              <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
-            <div className="w-24 h-1 bg-amber-500 mx-auto" />
+            <div className="w-24 h-1 bg-[#D4A017] mx-auto" />
           </div>
 
           {/* Produk Spesial */}
           <div className="mb-16">
             <div className="mb-10 text-center">
-              <h3 className="text-2xl font-bold text-amber-400 mb-2">
+              <h3 className="text-2xl font-bold text-[#D4A017] mb-2">
                 {specialProduct.title}
               </h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -806,7 +806,7 @@ export default function Product() {
                     {activeTab === i && (
                       <motion.div
                         layoutId="tab-highlight"
-                        className="absolute inset-0 bg-amber-500 rounded-full shadow-md"
+                        className="absolute inset-0 bg-[#D4A017] rounded-full shadow-md"
                         style={{ zIndex: -1 }}
                         transition={{
                           type: "spring",
@@ -939,7 +939,7 @@ export default function Product() {
         <div className="flex justify-center">
           <button
             onClick={() => setShowCustomize(true)}
-            className="flex items-center gap-2 bg-amber-400 hover:bg-amber-600 px-10 py-5 rounded-full transition-all font-bold shadow-lg active:scale-95"
+            className="flex items-center gap-2 bg-[#D4A017] hover:bg-amber-600 px-10 py-5 rounded-full transition-all font-bold shadow-lg active:scale-95"
           >
             <Sparkles size={18} />
             Customize?
