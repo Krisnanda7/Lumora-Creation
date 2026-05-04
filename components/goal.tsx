@@ -23,7 +23,7 @@ export default function Goal() {
   return (
     <section
       id="goal"
-      className="py-20 px-6 md:px-20  relative overflow-hidden bg-white"
+      className="py-20 px-6 md:px-20  relative overflow-hidden bg-white font-sans-serif"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}

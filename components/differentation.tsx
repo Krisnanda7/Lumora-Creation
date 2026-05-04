@@ -30,7 +30,7 @@ export default function Differentiation() {
   ];
 
   return (
-    <section className="py-16 px-5 md:px-20 bg-white">
+    <section className="py-16 px-5 md:px-20 bg-white font-sans-serif">
       <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-10 italic">
         Apa yang Membuat <span className="text-[#D4A017]">Lumora Creation</span>{" "}
         Unik?

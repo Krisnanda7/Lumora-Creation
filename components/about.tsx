@@ -27,7 +27,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 px-6 md:px-20 bg-white relative overflow-hidden"
+      className="py-20 px-6 md:px-20 bg-white relative overflow-hidden font-sans-serif"
     >
       <div className="max-w-6xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="2000">
@@ -46,7 +46,9 @@ export default function About() {
               {/* Main Description */}
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed text-gray-700">
-                  <span className="font-semibold text-gray-800">Lumora</span>{" "}
+                  <span className="font-semibold text-gray-800 italic">
+                    Lumora
+                  </span>{" "}
                   adalah lilin ramah lingkungan yang dibuat dari minyak jelantah
                   daur ulang. Produk ini menggabungkan keberlanjutan, estetika,
                   dan aromaterapi dalam satu solusi inovatif.
