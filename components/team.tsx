@@ -19,7 +19,7 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               Kadek Diana Angelika Prasanti.
             </h3>
-            <p className="text-lg font-bold text-amber-600">CEO</p>
+            <p className="text-lg font-bold text-[#D4A017]">CEO</p>
             <p className="text-lg text-gray-600">Visionary Light</p>
           </div>
 
@@ -34,7 +34,7 @@ export default function Team() {
               {" "}
               Ni Komang Dela Damayanti.
             </h3>
-            <p className="text-lg font-bold text-amber-600">Hustler</p>
+            <p className="text-lg font-bold text-[#D4A017]">Hustler</p>
             <p className="text-lg text-gray-600">Growth Igniter</p>
           </div>
 
@@ -48,7 +48,7 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               I Dewa Gede Mas Bagus Krisnanda.
             </h3>
-            <p className="text-lg font-bold text-amber-600">Hacker</p>
+            <p className="text-lg font-bold text-[#D4A017]">Hacker</p>
             <p className="text-lg text-gray-600">Sustainability Architect </p>
           </div>
 
@@ -62,7 +62,7 @@ export default function Team() {
             <h3 className="mt-4 font-bold text-xl">
               I Kadek Indra Satya Ananda.
             </h3>
-            <p className="text-lg font-bold text-amber-600">Hipster</p>
+            <p className="text-lg font-bold text-[#D4A017]">Hipster</p>
             <p className="text-lg text-gray-600">Aesthetic Alchemist</p>
           </div>
           {/* Card 5 */}
@@ -76,7 +76,7 @@ export default function Team() {
               {" "}
               I Made Dwitya Rastiawan.
             </h3>
-            <p className="text-lg font-bold text-amber-600">Hustler</p>
+            <p className="text-lg font-bold text-[#D4A017]">Hustler</p>
             <p className="text-lg text-gray-600">Growth Igniter</p>
           </div>
         </div>
