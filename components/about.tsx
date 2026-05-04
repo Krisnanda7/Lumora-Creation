@@ -63,7 +63,7 @@ export default function About() {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-3 p-3 rounded-2xl border shadow-lg border-gray-100 hover:border-amber-500  transition-colors "
+                    className="flex items-center space-x-3 p-3 rounded-2xl border shadow-lg border-gray-100 hover:border-amber-500  hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                   >
                     <span className="text-3xl flex-shrink-0">
                       {feature.icon}
