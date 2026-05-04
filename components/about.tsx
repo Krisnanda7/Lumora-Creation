@@ -59,11 +59,11 @@ export default function About() {
               </div>
 
               {/* Features Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans-serif">
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex items-center space-x-3 p-3 rounded-2xl border shadow-lg border-gray-100 hover:border-amber-500  transition-colors "
                   >
                     <span className="text-3xl flex-shrink-0">
                       {feature.icon}

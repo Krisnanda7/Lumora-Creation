@@ -55,7 +55,7 @@ export default function Goal() {
             {goals.map((goal, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl  transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-amber-500"
               >
                 <div className="text-4xl mb-4">{goal.icon}</div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">

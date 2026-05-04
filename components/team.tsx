@@ -10,7 +10,7 @@ export default function Team() {
         {/* Grid 2 kolom di desktop, 1 kolom di mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 justify-items-center">
           {/* Card 1 */}
-          <div className="p-6 shadow-md rounded-lg bg-white w-56">
+          <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img
               src="/kedin.png"
               alt="Team Leader"
@@ -24,7 +24,7 @@ export default function Team() {
           </div>
 
           {/* Card 2 */}
-          <div className="p-6 shadow-md rounded-lg bg-white w-56">
+          <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img
               src="/dela.png"
               alt="Co-Founder"
@@ -39,7 +39,7 @@ export default function Team() {
           </div>
 
           {/* Card 3 */}
-          <div className="p-6 shadow-md rounded-lg bg-white w-56">
+          <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img
               src="/krisna.png"
               alt="Marketing"
@@ -53,7 +53,7 @@ export default function Team() {
           </div>
 
           {/* Card 4 */}
-          <div className="p-6 shadow-md rounded-lg bg-white w-56">
+          <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img
               src="/satya.png"
               alt="satya"
@@ -66,7 +66,7 @@ export default function Team() {
             <p className="text-lg text-gray-600">Aesthetic Alchemist</p>
           </div>
           {/* Card 5 */}
-          <div className="p-6 shadow-md rounded-lg bg-white w-56">
+          <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img
               src="/dwitya.png"
               alt="Designer"
