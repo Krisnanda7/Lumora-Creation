@@ -709,14 +709,6 @@ export default function Product() {
           description:
             "Wadah kaca bulat transparan yang bisa digunakan kembali setelah lilin habis.",
         },
-        // {
-        //   id: 6,
-        //   name: "Wadah Ramah Tempurung Kelapa",
-        //   img: "/wadah3.png",
-        //   images: ["/wadah3.png", "/wadah3.png"],
-        //   description:
-        //     "Dibuat dari tempurung kelapa asli — ramah lingkungan dan unik secara estetika.",
-        // },
       ],
     },
     {
@@ -746,14 +738,17 @@ export default function Product() {
 
   const closeModal = () => setSelectedProduct(null);
 
-  // ── Render ─────────────────────────────────────────────────
   return (
     <>
       <section id="product" className="py-20 bg-white font-sans-serif">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4">
+            <h2
+              className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               Produk dari{" "}
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
@@ -761,7 +756,7 @@ export default function Product() {
           </div>
 
           {/* Produk Spesial */}
-          <div className="mb-16">
+          <div className="mb-16" data-aos="fade-up" data-aos-duration="2000">
             <div className="mb-10 text-center">
               <h3 className="text-2xl font-bold text-[#D4A017] mb-2">
                 {specialProduct.title}
@@ -781,7 +776,7 @@ export default function Product() {
           </div>
 
           {/* ── Katalog dengan Tab Switcher ── */}
-          <div className="mb-4">
+          <div className="mb-4" data-aos="fade-up" data-aos-duration="2000">
             {/* Section label */}
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -794,7 +789,11 @@ export default function Product() {
             </div>
 
             {/* Tab pill switcher */}
-            <div className="flex justify-center mb-10 px-2">
+            <div
+              className="flex justify-center mb-10 px-2"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <div className="relative flex bg-[#F5ECD7] rounded-full p-1.5 gap-0.5 shadow-inner w-full max-w-sm">
                 {categories.map((cat, i) => (
                   <button
@@ -928,7 +927,11 @@ export default function Product() {
         </div>
 
         {/* Kustomisasi */}
-        <div className="mt-10 p-10 text-center">
+        <div
+          className="mt-10 p-10 text-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <h3 className="text-2xl font-bold text-gray-800 mb-2 font-sans-serif italic">
             {customize.title}
           </h3>
@@ -936,7 +939,11 @@ export default function Product() {
             {customize.description}
           </p>
         </div>
-        <div className="flex justify-center">
+        <div
+          className="flex justify-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <button
             onClick={() => setShowCustomize(true)}
             className="flex items-center gap-2 bg-[#D4A017] hover:bg-amber-600 px-10 py-5 rounded-full transition-all font-bold shadow-lg active:scale-95"

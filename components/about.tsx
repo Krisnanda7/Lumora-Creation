@@ -30,12 +30,12 @@ export default function About() {
       className="py-20 px-6 md:px-20 bg-white relative overflow-hidden font-sans-serif"
     >
       <div className="max-w-6xl mx-auto">
-        <div data-aos="fade-up" data-aos-duration="2000">
+        <div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-8">
               {/* Header */}
-              <div>
+              <div data-aos="fade-right" data-aos-duration="2000">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-sans-serif italic">
                   Tentang{" "}
                   <span className="text-[#D4A017]">Lumora Creation</span>
@@ -44,7 +44,11 @@ export default function About() {
               </div>
 
               {/* Main Description */}
-              <div className="space-y-4">
+              <div
+                className="space-y-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 <p className="text-lg leading-relaxed text-gray-700">
                   <span className="font-semibold text-gray-800 italic">
                     Lumora
@@ -61,7 +65,11 @@ export default function About() {
               </div>
 
               {/* Features Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans-serif">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans-serif"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 {features.map((feature, index) => (
                   <div
                     key={index}
@@ -84,7 +92,11 @@ export default function About() {
             </div>
 
             {/* Image Section */}
-            <div className="relative">
+            <div
+              className="relative"
+              data-aos="fade-left"
+              data-aos-duration="2000"
+            >
               <div className="bg-gradient-to-br from-[#2d5a27] to-[#D4A017] rounded-2xl p-1 shadow-2xl">
                 <div className="bg-white rounded-xl p-4 text-center h-96 flex items-center justify-center overflow-hidden">
                   {/* Image Container */}
@@ -107,7 +119,11 @@ export default function About() {
           </div>
 
           {/* Stats Section */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <div className="space-y-2">
               <div className="text-3xl font-bold text-[#D4A017]">100%</div>
               <div className="text-gray-600 text-sm">Bahan Daur Ulang</div>

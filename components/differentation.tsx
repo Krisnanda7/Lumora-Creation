@@ -31,14 +31,21 @@ export default function Differentiation() {
 
   return (
     <section className="py-16 px-5 md:px-20 bg-white font-sans-serif">
-      <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-10 italic">
+      <h2
+        className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-10 italic"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
         Apa yang Membuat <span className="text-[#D4A017]">Lumora Creation</span>{" "}
         Unik?
       </h2>
 
       {/* DESKTOP */}
-      <div className="hidden md:grid grid-cols-3 gap-6">
-        <div></div>
+      <div
+        className="hidden md:grid grid-cols-3 gap-6"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <div className="text-center font-semibold text-gray-500">
           Lilin Biasa
         </div>
@@ -60,7 +67,11 @@ export default function Differentiation() {
       </div>
 
       {/* MOBILE (FIXED UX) */}
-      <div className="md:hidden space-y-6">
+      <div
+        className="md:hidden space-y-6"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         {data.map((item, i) => (
           <div key={i} className="bg-white rounded-2xl shadow-md p-5">
             {/* Aspek */}

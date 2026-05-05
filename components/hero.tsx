@@ -301,12 +301,12 @@ export default function Hero() {
                 <motion.h1
                   initial={{ y: 120 }}
                   animate={{ y: 0 }}
-                  transition={{ delay, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ delay, duration: 3, ease: [0.16, 1, 0.3, 1] }}
                   className={`font-black uppercase leading-[0.95] ${italic ? "italic" : ""}`}
                   style={{
                     fontSize: "clamp(2.4rem, 8vw, 4.2rem)",
                     letterSpacing: "-0.025em",
-                    fontFamily: "cinzel.style.fontFamily,",
+                    fontFamily: "cinzel.style.fontFamily",
                     ...(italic
                       ? {
                           WebkitTextStroke: "1.5px #D4A017",
@@ -335,7 +335,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.72, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.72, duration: 2, ease: [0.16, 1, 0.3, 1] }}
             className="text-stone-400 leading-relaxed mb-7 max-w-[420px]"
             style={{ fontFamily: "sans-serif", fontSize: "0.9rem" }}
           >
