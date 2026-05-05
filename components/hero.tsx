@@ -7,9 +7,8 @@ import {
   useSpring,
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { ArrowRight, Leaf, Flame, Star, Sparkles } from "lucide-react";
+import { ArrowRight, Flame, Sparkles } from "lucide-react";
 
-// ── Floating particle dots ──────────────────────────────────
 function Particles() {
   const particles = Array.from({ length: 18 }, (_, i) => ({
     id: i,
@@ -20,7 +19,6 @@ function Particles() {
     delay: Math.random() * 4,
     opacity: Math.random() * 0.4 + 0.1,
   }));
-
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {particles.map((p) => (
@@ -51,36 +49,6 @@ function Particles() {
   );
 }
 
-// ── Magnetic cursor follower ─────────────────────────────────
-// function CursorGlow() {
-//   const x = useMotionValue(0);
-//   const y = useMotionValue(0);
-//   const springX = useSpring(x, { stiffness: 60, damping: 18 });
-//   const springY = useSpring(y, { stiffness: 60, damping: 18 });
-
-//   useEffect(() => {
-//     const move = (e: MouseEvent) => {
-//       x.set(e.clientX - 200);
-//       y.set(e.clientY - 200);
-//     };
-//     window.addEventListener("mousemove", move);
-//     return () => window.removeEventListener("mousemove", move);
-//   }, [x, y]);
-
-//   return (
-//     <motion.div
-//       className="pointer-events-none fixed z-0 w-[400px] h-[400px] rounded-full"
-//       style={{
-//         x: springX,
-//         y: springY,
-//         background:
-//           "radial-gradient(circle, rgba(217,119,6,0.10) 0%, transparent 70%)",
-//       }}
-//     />
-//   );
-// }
-
-// ── Floating product pill card ───────────────────────────────
 function FloatCard({
   emoji,
   label,
@@ -98,13 +66,13 @@ function FloatCard({
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.85 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ delay, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ delay, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       className={`absolute z-20 ${className}`}
     >
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{
-          duration: 4,
+          duration: 5,
           repeat: Infinity,
           ease: "easeInOut",
           delay: delay * 0.5,
@@ -125,7 +93,6 @@ function FloatCard({
   );
 }
 
-// ── Stat chip ───────────────────────────────────────────────
 function StatChip({
   num,
   label,
@@ -139,7 +106,7 @@ function StatChip({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ delay, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col"
     >
       <span
@@ -161,13 +128,9 @@ function StatChip({
   );
 }
 
-// ═══════════════════════════════════════════════════════════
-// HERO
-// ═══════════════════════════════════════════════════════════
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  // SESUDAH — ganti dengan ini
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -183,7 +146,7 @@ export default function Hero() {
     isMobile ? [0, 0] : [0, -100],
   );
   const scaleImg = useTransform(scrollYProgress, [0, 0.6], [1, 1.08]);
-  const opacityImg = useTransform(scrollYProgress, [0, 0.7], [1, 1]); // ← hilangkan fade out
+  const opacityImg = useTransform(scrollYProgress, [0, 0.7], [1, 1]);
 
   return (
     <section
@@ -191,10 +154,9 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden flex items-center"
       style={{ backgroundColor: "#080603" }}
     >
-      {/* <CursorGlow /> */}
       <Particles />
 
-      {/* ── Grain texture ── */}
+      {/* Grain */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-[0.14]"
         style={{
@@ -204,7 +166,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Warm glow blobs ── */}
+      {/* Glow blobs */}
       <motion.div
         animate={{ opacity: [0.3, 0.55, 0.3], scale: [1, 1.07, 1] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -222,15 +184,15 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Vertical accent lines ── */}
+      {/* Vertical accent lines */}
       {[8, 14].map((left, i) => (
         <motion.div
           key={i}
           initial={{ scaleY: 0, opacity: 0 }}
           animate={{ scaleY: 1, opacity: 1 }}
           transition={{
-            delay: 0.2 + i * 0.15,
-            duration: 1.4,
+            delay: 0.6 + i * 0.2,
+            duration: 1.8,
             ease: [0.16, 1, 0.3, 1],
           }}
           className="absolute top-1/2 -translate-y-1/2 w-px origin-top hidden lg:block"
@@ -242,11 +204,11 @@ export default function Hero() {
         />
       ))}
 
-      {/* ── Horizontal top rule ── */}
+      {/* Horizontal top rule */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ delay: 0.1, duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ delay: 0.2, duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute top-0 left-0 right-0 h-px origin-left z-10"
         style={{
           background:
@@ -254,15 +216,15 @@ export default function Hero() {
         }}
       />
 
-      {/* ══ Main layout ══════════════════════════════════════ */}
+      {/* Main layout */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 pt-6 pb-28 lg:py-24 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-center">
-        {/* ══ LEFT: TEXT ══════════════════════════════════════ */}
+        {/* LEFT: TEXT */}
         <div className="w-full order-1 lg:order-1">
-          {/* Badge pill */}
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.3, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 bg-amber-900/20 border border-amber-700/30 rounded-full px-4 py-1.5 mb-5"
           >
             <Sparkles size={10} className="text-[#D4A017]" />
@@ -275,38 +237,23 @@ export default function Hero() {
             <Sparkles size={10} className="text-[#D4A017]" />
           </motion.div>
 
-          {/* Brand */}
-          {/* <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.18, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-amber-500 text-sm font-semibold tracking-[0.22em] uppercase mb-3"
-            style={{ fontFamily: "sans-serif" }}
-          >
-            Lumora Creation
-          </motion.p> */}
-
           {/* Headline */}
           <div className="mb-6 space-y-0.5 mt-5">
             {[
-              { text: "Lilin", italic: false, delay: 0.28 },
-              { text: "Aromaterapi", italic: true, delay: 0.38 },
-              {
-                text: "dari minyak Jelantah",
-                italic: false,
-                delay: 0.48,
-              },
+              { text: "Lilin", italic: false, delay: 0.5 },
+              { text: "Aromaterapi", italic: true, delay: 0.7 },
+              { text: "dari minyak Jelantah", italic: false, delay: 0.9 },
             ].map(({ text, italic, delay }) => (
               <div key={text} className="overflow-hidden">
                 <motion.h1
                   initial={{ y: 120 }}
                   animate={{ y: 0 }}
-                  transition={{ delay, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ delay, duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
                   className={`font-black uppercase leading-[0.95] ${italic ? "italic" : ""}`}
                   style={{
                     fontSize: "clamp(2.4rem, 8vw, 4.2rem)",
                     letterSpacing: "-0.025em",
-                    fontFamily: "cinzel.style.fontFamily,",
+                    fontFamily: "Georgia, serif",
                     ...(italic
                       ? {
                           WebkitTextStroke: "1.5px #D4A017",
@@ -321,21 +268,22 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Divider + body */}
+          {/* Divider */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ delay: 0.65, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 1.2, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             className="origin-left h-px w-20 mb-5"
             style={{
               background: "linear-gradient(to right, #D4A017, transparent)",
             }}
           />
 
+          {/* Body */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.72, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 1.35, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
             className="text-stone-400 leading-relaxed mb-7 max-w-[420px]"
             style={{ fontFamily: "sans-serif", fontSize: "0.9rem" }}
           >
@@ -348,43 +296,22 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.82 }}
+            transition={{ delay: 1.5 }}
             className="flex gap-6 lg:gap-8 mb-8"
           >
             {[
-              { num: "100%", label: "Daur Ulang", delay: 0.84 },
-              { num: "5+", label: "Varian Aroma", delay: 0.92 },
-              // { num: "Zero", label: "Limbah Baru", delay: 1.0 },
+              { num: "100%", label: "Daur Ulang", delay: 1.55 },
+              { num: "5+", label: "Varian Aroma", delay: 1.7 },
             ].map((s) => (
               <StatChip key={s.label} {...s} />
             ))}
           </motion.div>
 
-          {/* Stars social proof */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.02, duration: 0.6 }}
-            className="flex items-center gap-2 mb-7"
-            style={{ fontFamily: "sans-serif" }}
-          >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  size={12}
-                  className="text-amber-400 fill-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-stone-500 text-xs">200+ pelanggan puas</span>
-          </motion.div> */}
-
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 1.85, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-5 mb-10 lg:mb-0"
             style={{ fontFamily: "sans-serif" }}
           >
@@ -392,7 +319,6 @@ export default function Hero() {
               href="#product"
               className="group relative overflow-hidden bg-[#D4A017] hover:bg-amber-500 text-white text-sm font-bold px-7 py-3.5 rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.4)] hover:shadow-[0_0_55px_rgba(217,119,6,0.55)] hover:scale-[1.03] active:scale-[0.98]"
             >
-              {/* shimmer */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12" />
               <Flame size={15} />
               Lihat Produk
@@ -410,21 +336,20 @@ export default function Hero() {
               <span className="transition-transform duration-300 group-hover:translate-x-1 inline-block">
                 →
               </span>
-              {/* underline */}
               <span className="absolute -bottom-0.5 left-0 w-0 group-hover:w-full h-px bg-amber-600 transition-all duration-300" />
             </a>
           </motion.div>
         </div>
 
-        {/* ══ RIGHT: IMAGE COMPOSITION ════════════════════════ */}
+        {/* RIGHT: IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.7, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: yParallax }}
           className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-6 lg:pt-0 lg:pb-0"
         >
-          {/* Outer decorative rings — desktop only (too large for mobile) */}
+          {/* Rings desktop */}
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -436,8 +361,7 @@ export default function Hero() {
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="absolute hidden lg:block w-[420px] h-[420px] rounded-full border border-amber-700/10"
           />
-
-          {/* Mobile: smaller decorative ring */}
+          {/* Ring mobile */}
           <motion.div
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -445,7 +369,7 @@ export default function Hero() {
             style={{ borderStyle: "dashed" }}
           />
 
-          {/* Glow behind image */}
+          {/* Glow */}
           <motion.div
             animate={{ opacity: [0.4, 0.7, 0.4], scale: [0.95, 1.05, 0.95] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -456,13 +380,12 @@ export default function Hero() {
             }}
           />
 
-          {/* Main image — floating */}
+          {/* Image */}
           <motion.div
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="relative z-10"
           >
-            {/* Decorative tilt frames */}
             <div
               className="absolute -inset-3 rounded-[2.2rem] border border-amber-600/20"
               style={{ transform: "rotate(4deg)" }}
@@ -513,32 +436,32 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ── Floating cards — repositioned for mobile ── */}
+          {/* Float cards */}
           <FloatCard
             emoji="🌿"
             label="100% Eco"
             sub="Zero Waste"
-            delay={1.1}
+            delay={2.0}
             className="top-2 left-2 lg:-top-0 lg:-left-0"
           />
           <FloatCard
             emoji="🕯️"
             label="5+ Aroma"
             sub="Pilihan Wangi"
-            delay={1.25}
+            delay={2.2}
             className="top-1/4 right-2 lg:-right-0"
           />
           <FloatCard
             emoji="♻️"
             label="Daur Ulang"
             sub="Minyak Jelantah"
-            delay={1.4}
-            className=" top-1/2 bottom-16 left-2 lg:-bottom-4 lg:-left-0"
+            delay={2.4}
+            className="top-1/2 left-2 lg:-left-0"
           />
         </motion.div>
       </div>
 
-      {/* ── Bottom fade ── */}
+      {/* Bottom fade */}
       <div
         className="pointer-events-none absolute bottom-0 left-0 right-0 h-0 lg:h-32 z-10"
         style={{

@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold text-[#D4A017]">Lumora Creation</h2>
-          <p className="mt-2 text-gray-300">
+          <p className="mt-2 text-gray-300 sm">
             Menciptakan lilin ramah lingkungan dari minyak jelantah daur ulang.
             Solusi sehat, estetik, dan berkelanjutan.
           </p>
