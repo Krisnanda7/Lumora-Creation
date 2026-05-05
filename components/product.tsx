@@ -789,12 +789,12 @@ export default function Product() {
             </div>
 
             {/* Tab pill switcher */}
-            <div
-              className="flex justify-center mb-10 px-2"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <div className="relative flex bg-[#F5ECD7] rounded-full p-1.5 gap-0.5 shadow-inner w-full max-w-sm">
+            <div className="flex justify-center mb-10 px-2">
+              <div
+                className="relative flex bg-[#F5ECD7] rounded-full p-1.5 gap-0.5 shadow-inner w-full max-w-sm"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 {categories.map((cat, i) => (
                   <button
                     key={i}

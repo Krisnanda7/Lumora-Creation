@@ -27,13 +27,9 @@ export default function Goal() {
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div
-            className="text-center mb-16"
-            data-aos="fade-right"
-            data-aos-duration="2000"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-sans-serif italic">
+        <div className="mb-16">
+          <div className="mb-16" data-aos="fade-right" data-aos-duration="2000">
+            <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-sans-serif italic  text-center">
               Tujuan dari{" "}
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
