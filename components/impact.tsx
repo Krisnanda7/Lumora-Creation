@@ -34,18 +34,24 @@ export default function Impact() {
       id="impact"
       className="py-20 px-6 md:px-20 bg-white text-center font-sans-serif relative overflow-hidden"
     >
-      <div data-aos="fade-up" data-aos-duration="1500">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-sans-serif italic">
-          Lebih Dari Sekadar <span className="text-[#D4A017]">Cahaya</span>
-        </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto mb-10 ">
-          Membawa harmoni ke dalam rumah sekaligus menjaga kelestarian bumi
-          kita.
-        </p>
-        <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-12"></div>
+      <div>
+        <div data-aos="fade-right" data-aos-duration="2000">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-sans-serif italic">
+            Lebih Dari Sekadar <span className="text-[#D4A017]">Cahaya</span>
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto mb-10 ">
+            Membawa harmoni ke dalam rumah sekaligus menjaga kelestarian bumi
+            kita.
+          </p>
+          <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-12"></div>
+        </div>
 
         {/* Menggunakan grid yang lebih dinamis */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div
+          className="flex flex-wrap justify-center gap-8"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {impactData.map((item, index) => (
             <div
               key={index}

@@ -27,12 +27,12 @@ export default function Goal() {
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
-        <div
-          className="text-center mb-16"
-          data-aos="fade-right"
-          data-aos-duration="2000"
-        >
-          <div className="text-center mb-16">
+        <div className="text-center mb-16">
+          <div
+            className="text-center mb-16"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
             <h2 className="text-4xl md:text-5xl font-bold  text-gray-800 mb-4 font-sans-serif italic">
               Tujuan dari{" "}
               <span className="text-[#D4A017]">Lumora Creation</span>
@@ -51,7 +51,11 @@ export default function Goal() {
           </div>
 
           {/* Goals Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             {goals.map((goal, index) => (
               <div
                 key={index}

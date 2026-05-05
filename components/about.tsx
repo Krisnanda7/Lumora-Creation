@@ -94,7 +94,7 @@ export default function About() {
             {/* Image Section */}
             <div
               className="relative"
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-duration="2000"
             >
               <div className="bg-gradient-to-br from-[#2d5a27] to-[#D4A017] rounded-2xl p-1 shadow-2xl">

@@ -4,14 +4,20 @@ export default function Team() {
       id="team"
       className="py-16 px-6 md:px-20 bg-white text-center font-sans-serif"
     >
-      <div data-aos="fade-up" data-aos-duration="2000">
-        <h2 className="text-4xl md:text-5xl font-bold   text-gray-800 font-sans-serif italic mb-5">
-          Tim <span className="text-[#D4A017]">Lumora Creation</span>
-        </h2>
-        <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
+      <div>
+        <div data-aos="fade-right" data-aos-duration="2000">
+          <h2 className="text-4xl md:text-5xl font-bold   text-gray-800 font-sans-serif italic mb-5">
+            Tim <span className="text-[#D4A017]">Lumora Creation</span>
+          </h2>
+          <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
+        </div>
 
         {/* Grid 2 kolom di desktop, 1 kolom di mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 justify-items-center">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-5 gap-4 justify-items-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           {/* Card 1 */}
           <div className="p-6 shadow-md rounded-lg bg-white w-56 border hover:border-amber-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <img

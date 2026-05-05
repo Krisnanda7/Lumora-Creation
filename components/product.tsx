@@ -743,12 +743,12 @@ export default function Product() {
       <section id="product" className="py-20 bg-white font-sans-serif">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4"
-              data-aos="fade-right"
-              data-aos-duration="2000"
-            >
+          <div
+            className="text-center mb-16"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
+            <h2 className="text-4xl font-sans-serif italic font-bold text-[#1A1A1A] mb-4">
               Produk dari{" "}
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
