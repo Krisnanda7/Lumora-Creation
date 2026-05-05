@@ -49,7 +49,7 @@ export default function About() {
                 data-aos="fade-up"
                 data-aos-duration="2000"
               >
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 text-justify">
                   <span className="font-semibold text-gray-800 italic">
                     Lumora
                   </span>{" "}
@@ -57,7 +57,7 @@ export default function About() {
                   daur ulang. Produk ini menggabungkan keberlanjutan, estetika,
                   dan aromaterapi dalam satu solusi inovatif.
                 </p>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 text-justify">
                   Lebih dari sekadar sumber cahaya, Lumora menghadirkan
                   pengalaman yang menumbuhkan rasa tanggung jawab terhadap
                   lingkungan dalam setiap penggunaan.

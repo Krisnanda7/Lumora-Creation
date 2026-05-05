@@ -34,21 +34,23 @@ export default function Goal() {
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
             <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
-            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700">
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700 text-justify text-lg">
               Kami memiliki tekad kuat untuk memulai{" "}
-              <span className="font-semibold text-gray-800">Lumora</span> karena
-              kami melihat dan merasakan langsung dampak negatif dari polusi
-              minyak jelantah di lingkungan sekitar kami. Dengan memanfaatkan
-              minyak jelantah yang biasanya dibuang begitu saja, kami ingin
-              memberikan solusi yang tidak hanya ramah lingkungan, tetapi juga
-              memberikan nilai tambah melalui produk lilin aromaterapi yang kami
-              ciptakan.
+              <span className="font-semibold text-gray-800 italic">Lumora</span>{" "}
+              karena kami melihat dan merasakan langsung dampak negatif dari
+              polusi minyak jelantah di lingkungan sekitar kami.
+              <p className="mt-4 text-gray-700 text-lg">
+                Dengan memanfaatkan minyak jelantah yang biasanya dibuang begitu
+                saja, kami ingin memberikan solusi yang tidak hanya ramah
+                lingkungan, tetapi juga memberikan nilai tambah melalui produk
+                lilin aromaterapi yang kami ciptakan.
+              </p>
             </p>
           </div>
 
           {/* Goals Grid */}
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
