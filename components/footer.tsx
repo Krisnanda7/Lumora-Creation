@@ -3,7 +3,7 @@ import { FaInstagram, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A] text-white py-10 px-6 md:px-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold text-[#D4A017]">Lumora Creation</h2>
@@ -28,7 +28,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#impact" className="hover:text-[#D4A017] ">
+              <a href="#impact" className="hover:text-[#D4A017]">
                 Manfaat
               </a>
             </li>
@@ -49,8 +49,8 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-semibold text-[#D4A017]">Hubungi Kami</h3>
           <ul className="mt-2 space-y-3">
-            <li className="flex items-center justify-center md:justify-start gap-2">
-              <FaInstagram className="text-[#D4A017]" />
+            <li className="flex items-center gap-2">
+              <FaInstagram className="text-[#D4A017] flex-shrink-0" />
               <a
                 href="https://www.instagram.com/lumora.creation/"
                 target="_blank"
@@ -59,12 +59,12 @@ export default function Footer() {
                 @lumora.creation
               </a>
             </li>
-            <li className="flex items-center justify-center md:justify-start gap-2">
-              <FaPhone className="text-[#D4A017]" />
-              <a href="tel:+6281234567890">+6282144603278</a>
+            <li className="flex items-center gap-2">
+              <FaPhone className="text-[#D4A017] flex-shrink-0" />
+              <a href="tel:+6282144603278">+6282144603278</a>
             </li>
-            <li className="flex items-center justify-center md:justify-start gap-2">
-              <FaMapMarkerAlt className="text-[#D4A017]" />
+            <li className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-[#D4A017] flex-shrink-0" />
               <span>JL. Tukad Badung, Denpasar</span>
             </li>
           </ul>
