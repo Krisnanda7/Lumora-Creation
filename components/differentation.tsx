@@ -42,31 +42,50 @@ export default function Differentiation() {
 
       {/* DESKTOP */}
       <div
-        className="hidden md:grid grid-cols-3 gap-6"
+        className="hidden md:block"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <div className="text-center font-semibold text-gray-500">
-          Lilin Biasa
-        </div>
-        <div className="text-center font-semibold text-[#D4A017]">Lumora</div>
-
-        {data.map((item, i) => (
-          <div key={i} className="contents">
-            <div className="bg-white shadow rounded-xl p-4 font-semibold">
-              {item.aspek}
-            </div>
-            <div className="bg-white shadow rounded-xl p-4 text-center text-gray-500">
-              {item.biasa}
-            </div>
-            <div className="bg-[#D4A017]/10 border border-[#D4A017] shadow rounded-xl p-4 text-center font-semibold">
-              {item.lumora}
-            </div>
+        {/* Header row */}
+        <div className="grid grid-cols-3 gap-4 mb-3 px-1">
+          <div className="text-center font-semibold text-gray-400 text-sm uppercase tracking-widest">
+            Aspek
           </div>
-        ))}
+          <div className="text-center font-semibold text-gray-400 text-sm uppercase tracking-widest">
+            Lilin Biasa
+          </div>
+          <div className="text-center font-semibold text-[#D4A017] text-sm uppercase tracking-widest">
+            Lumora Creation
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-gray-100 mb-4" />
+
+        {/* Data rows */}
+        <div className="space-y-3">
+          {data.map((item, i) => (
+            <div key={i} className="grid grid-cols-3 gap-4 items-center">
+              {/* Aspek */}
+              <div className="bg-white border border-gray-100 shadow-sm rounded-xl px-5 py-4 text-center font-semibold text-gray-700">
+                {item.aspek}
+              </div>
+
+              {/* Lilin Biasa */}
+              <div className="bg-white border border-gray-100 shadow-sm rounded-xl px-5 py-4 text-center text-gray-400">
+                {item.biasa}
+              </div>
+
+              {/* Lumora */}
+              <div className="bg-[#D4A017]/10 border border-[#D4A017] shadow-sm rounded-xl px-5 py-4 text-center font-semibold text-gray-800">
+                {item.lumora}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* MOBILE (FIXED UX) */}
+      {/* MOBILE */}
       <div
         className="md:hidden space-y-6"
         data-aos="fade-up"
@@ -74,22 +93,21 @@ export default function Differentiation() {
       >
         {data.map((item, i) => (
           <div key={i} className="bg-white rounded-2xl shadow-md p-5">
-            {/* Aspek */}
             <h3 className="font-bold text-lg text-gray-800 mb-4">
               {item.aspek}
             </h3>
 
-            {/* Lilin biasa */}
             <div className="mb-3">
-              <p className="text-sm text-gray-500">Lilin Biasa</p>
-              <div className="bg-gray-100 rounded-lg p-3 text-gray-600">
+              <p className="text-sm text-gray-400 mb-1">Lilin Biasa</p>
+              <div className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-gray-500">
                 {item.biasa}
               </div>
             </div>
 
-            {/* Lumora (highlight) */}
             <div>
-              <p className="text-sm text-[#D4A017] font-semibold">Lumora</p>
+              <p className="text-sm text-[#D4A017] font-semibold mb-1">
+                Lumora
+              </p>
               <div className="bg-[#D4A017]/10 border border-[#D4A017] rounded-lg p-3 font-semibold text-gray-800">
                 {item.lumora}
               </div>
