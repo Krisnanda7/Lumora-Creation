@@ -24,6 +24,8 @@ export default function Navbar() {
     { name: "Tentang", href: "#about" },
     { name: "Perbandingan", href: "#differentation" },
     { name: "Manfaat", href: "#impact" },
+    { name: "Tujuan", href: "#goal" },
+    { name: "Tim", href: "#team" },
   ];
 
   return (
