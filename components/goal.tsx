@@ -34,7 +34,7 @@ export default function Goal() {
               <span className="text-[#D4A017]">Lumora Creation</span>
             </h2>
             <div className="w-24 h-1 bg-[#D4A017] mx-auto mb-6"></div>
-            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700 text-justify text-lg">
+            <p className="max-w-3xl mx-auto  leading-relaxed text-gray-700 text-justify text-lg">
               Kami memiliki tekad kuat untuk memulai{" "}
               <span className="font-semibold text-gray-800 italic">Lumora</span>{" "}
               karena kami melihat dan merasakan langsung dampak negatif dari
