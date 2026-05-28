@@ -347,7 +347,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.7, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           style={{ y: yParallax }}
-          className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-6 lg:pt-0 lg:pb-0"
+          className="relative flex items-center justify-center order-2 lg:order-2 pt-4 pb-6 lg:pt-0 lg:pb-0 lg:mt-52"
         >
           {/* Rings desktop */}
           <motion.div
@@ -449,14 +449,14 @@ export default function Hero() {
             label="5+ Aroma"
             sub="Pilihan Wangi"
             delay={2.2}
-            className="top-1/4 right-2 lg:-right-0"
+            className="top-16 right-0 lg:-right-0"
           />
           <FloatCard
             emoji="♻️"
             label="Daur Ulang"
             sub="Minyak Jelantah"
             delay={2.4}
-            className="top-1/2 left-2 lg:-left-0"
+            className="top-1/2 -left-5 lg:-left-0"
           />
         </motion.div>
       </div>
