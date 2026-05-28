@@ -28,6 +28,8 @@ export default function About() {
     <section
       id="about"
       className="py-20 px-6 md:px-20 bg-white relative overflow-hidden font-sans-serif"
+      data-aos="fade-up"
+      data-aos-duration="2000"
     >
       <div className="max-w-6xl mx-auto">
         <div>

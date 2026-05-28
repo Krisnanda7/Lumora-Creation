@@ -405,7 +405,7 @@ export default function Hero() {
               }}
             >
               <img
-                src="/bentukspesial.png"
+                src="/produklumora.png"
                 alt="Lumora hero candle"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: "center 40%" }}
