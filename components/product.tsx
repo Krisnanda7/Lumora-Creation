@@ -653,16 +653,58 @@ export default function Product() {
               className="relative cursor-pointer group"
               onClick={() => setSelectedProduct(specialProduct)}
             >
+              {/* Pulse rings */}
+              <motion.div
+                animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0, 0.4] }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -inset-3 rounded-3xl border-2 border-[#D4A017]/40"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.14, 1], opacity: [0.2, 0, 0.2] }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.4,
+                }}
+                className="absolute -inset-5 rounded-3xl border border-[#D4A017]/20"
+              />
+
               {/* Glow */}
               <div className="absolute -inset-2 rounded-3xl bg-[#D4A017]/20 blur-xl" />
+
               <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(212,160,23,0.2)] border-2 border-[#D4A017] h-72 lg:h-96 bg-white">
                 <img
                   src={specialProduct.img}
                   alt={specialProduct.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex justify-center">
+
+                {/* Shimmer sweep on hover */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 pointer-events-none" />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+                {/* TERLARIS badge */}
+                <div className="absolute top-3 left-3">
+                  <motion.div
+                    animate={{ opacity: [1, 0.6, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="flex items-center gap-1.5 bg-[#D4A017] rounded-full px-3 py-1"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                    <span className="text-white text-[9px] font-bold tracking-widest uppercase">
+                      Signature Collection
+                    </span>
+                  </motion.div>
+                </div>
+
+                {/* Bottom label */}
+                {/* <div className="absolute bottom-4 left-4 right-4 flex justify-center">
                   <div className="bg-black/50 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/10 text-center">
                     <p className="text-[#D4A017] text-[9px] uppercase tracking-widest mb-0.5">
                       Signature Collection
@@ -671,7 +713,22 @@ export default function Product() {
                       {specialProduct.name}
                     </p>
                   </div>
-                </div>
+                </div> */}
+              </div>
+
+              {/* CTA hook button */}
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
+                <motion.div
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="flex items-center gap-2 bg-[#D4A017] text-white rounded-full px-5 py-2.5 shadow-[0_8px_24px_rgba(212,160,23,0.45)] text-[11px] font-bold tracking-wide"
+                >
+                  klik untuk lihat detail
+                </motion.div>
               </div>
             </motion.div>
           </div>
