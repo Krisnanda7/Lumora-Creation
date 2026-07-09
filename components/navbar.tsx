@@ -22,7 +22,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Produk", href: "#product" },
     { name: "Tentang", href: "#about" },
-    { name: "Perbandingan", href: "#differentation" },
+    { name: "Perbandingan", href: "#perbandingan" },
     { name: "Manfaat", href: "#impact" },
     { name: "Tujuan", href: "#goal" },
     { name: "Tim", href: "#team" },
@@ -70,12 +70,14 @@ export default function Navbar() {
           <button
             onClick={handleWhatsAppOrder}
             className="text-[#D4A017] active:scale-90"
+            aria-label="Pesan lewat WhatsApp"
           >
             <MessageCircle size={24} />
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 text-gray-200 hover:text-[#D4A017] transition-colors"
+            aria-label={isOpen ? "Tutup menu" : "Buka menu"}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -89,7 +91,11 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-5 border-b border-gray-800">
           <span className="font-semibold text-lg text-[#D4A017]">Menu</span>
-          <button onClick={() => setIsOpen(false)} className="text-gray-300">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-gray-300"
+            aria-label="Tutup menu"
+          >
             <X size={26} />
           </button>
         </div>

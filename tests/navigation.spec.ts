@@ -69,12 +69,14 @@ test.describe("Pengujian Navigasi Lumora Creation", () => {
     // Mencari dan klik link "Perbandingan"
     console.log("🔍 Mencari link Perbandingan di navbar...");
     await page.waitForTimeout(500);
-    await page.locator('nav >> a[href="#differentation"]').first().click();
+    await expect(page.locator('nav >> a[href="#perbandingan"]')).toHaveCount(1);
+    await page.locator('nav >> a[href="#perbandingan"]').first().click();
 
     console.log("⏳ Menunggu scroll ke section Perbandingan...");
     await page.waitForTimeout(2000); // Tunggu lebih lama untuk observe scroll
 
-    await expect(page).toHaveURL(/#differentation/);
+    await expect(page).toHaveURL(/#perbandingan/);
+    await expect(page.locator('#perbandingan')).toBeVisible();
     console.log("✅ Berhasil ke section Perbandingan!");
 
     await page.waitForTimeout(500);

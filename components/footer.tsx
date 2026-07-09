@@ -23,7 +23,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#differentation" className="hover:text-[#D4A017]">
+              <a href="#perbandingan" className="hover:text-[#D4A017]">
                 Perbandingan
               </a>
             </li>
