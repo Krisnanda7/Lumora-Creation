@@ -152,43 +152,49 @@ export default function Hero() {
 
   useEffect(() => {
     const timeoutIds: number[] = [];
-    let lineIndex = 0;
-    let charIndex = 0;
-    let currentText = "";
+    const typingDelay = 120;
+    const linePause = 320;
+    const repeatPause = 1800;
 
-    const runType = () => {
-      const fullText = headlineSegments[lineIndex].text;
-      currentText += fullText[charIndex];
-      setTypedHeadline((prev) => {
-        const next = [...prev];
-        next[lineIndex] = currentText;
-        return next;
-      });
+    const scheduleCycle = (startDelay: number) => {
+      setTypedHeadline(Array(headlineSegments.length).fill(""));
+      setActiveHeadlineIndex(0);
 
-      charIndex += 1;
-      if (charIndex < fullText.length) {
-        timeoutIds.push(window.setTimeout(runType, 120));
-      } else if (lineIndex < headlineSegments.length - 1) {
-        lineIndex += 1;
-        charIndex = 0;
-        currentText = "";
+      let totalDelay = startDelay;
+
+      headlineSegments.forEach((segment, index) => {
         timeoutIds.push(
           window.setTimeout(() => {
-            setActiveHeadlineIndex(lineIndex);
-            runType();
-          }, 320),
+            setActiveHeadlineIndex(index);
+          }, totalDelay),
         );
-      } else {
-        setActiveHeadlineIndex(-1);
-      }
+
+        const fullText = segment.text;
+        for (let charIndex = 0; charIndex < fullText.length; charIndex += 1) {
+          totalDelay += typingDelay;
+          timeoutIds.push(
+            window.setTimeout(() => {
+              setTypedHeadline((prev) => {
+                const next = [...prev];
+                next[index] = fullText.slice(0, charIndex + 1);
+                return next;
+              });
+            }, totalDelay),
+          );
+        }
+
+        totalDelay += linePause;
+      });
+
+      timeoutIds.push(
+        window.setTimeout(() => {
+          setActiveHeadlineIndex(-1);
+          scheduleCycle(repeatPause);
+        }, totalDelay),
+      );
     };
 
-    timeoutIds.push(
-      window.setTimeout(() => {
-        setActiveHeadlineIndex(0);
-        runType();
-      }, 500),
-    );
+    scheduleCycle(500);
 
     return () => timeoutIds.forEach(window.clearTimeout);
   }, []);
@@ -291,15 +297,16 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <div className="mb-6 space-y-0.5 mt-5">
+          <div className="mb-6 space-y-[0.25rem] mt-5">
             {headlineSegments.map(({ text, italic }, index) => (
               <div key={text} className="overflow-hidden">
                 <motion.h1
                   initial={{ y: 120 }}
                   animate={{ y: 0 }}
                   transition={{ delay: 0.5 + index * 0.15, duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
-                  className={`font-black uppercase leading-[0.95] ${italic ? "italic" : ""}`}
+                  className={`font-black uppercase leading-[0.9] ${italic ? "italic" : ""}`}
                   style={{
+                    lineHeight: 0.9,
                     fontSize: "clamp(2.4rem, 8vw, 4.2rem)",
                     letterSpacing: "-0.025em",
                     fontFamily: "Georgia, serif",
