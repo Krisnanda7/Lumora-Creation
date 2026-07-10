@@ -319,15 +319,14 @@ export default function Hero() {
                   }}
                 >
                   {typedHeadline[index]}
-                  <span
-                    className={`inline-block w-[0.45ch] ${
-                      index === activeHeadlineIndex
-                        ? "border-r border-white/80 animate-[blink_1s_steps(2)_infinite]"
-                        : ""
-                    }`}
-                  >
-                    {index === activeHeadlineIndex ? "\u00A0" : ""}
-                  </span>
+                  {index === activeHeadlineIndex ? (
+                    <span
+                      aria-hidden="true"
+                      className="inline-block w-[0.45ch] border-r border-white/80 animate-[blink_1s_steps(2)_infinite]"
+                    >
+                      &nbsp;
+                    </span>
+                  ) : null}
                 </motion.h1>
               </div>
             ))}
